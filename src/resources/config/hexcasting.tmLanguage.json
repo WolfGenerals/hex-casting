@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "HexCasting",
+	"scopeName": "source.hexcasting",
+	"fileTypes": [
+		".hc"
+	],
+	"patterns": [
+		{
+			"name": "comment.line",
+			"match": "//.*",
+			"comment": "单行注释"
+		},
+		{
+			"name": "constant.other",
+			"match": "\\b(vec)(?=<)",
+			"comment": "Vec3"
+		},
+		{
+			"name": "string",
+			"patterns": [
+				{
+					"name": "string",
+					"begin": "(?<!vec)<",
+					"end": ">",
+					"comment": "SNBT"
+				},
+				{
+					"name": "string",
+					"begin": "`",
+					"end": "`",
+					"comment": "Raw"
+				}
+			]
+		},
+
+		{
+			"name": "entity.name.function",
+			"match": "\\$\\b([0-9a-zA-Z_/]+)\\b",
+			"comment": "引用 函数/iota"
+		},
+		{
+			"name": "markup.bold",
+			"match": "\\b[a-zA-Z0-9_/]+(?=\\s*({|=))",
+			"comment": "函数/iota 定义"
+		},
+		{
+			"name":"entity.name.tag",
+			"match": "#.*",
+			"comment": "宏"
+		},
+		{
+			"name": "keyword.control.definition",
+			"match": "\\b(func|iota|use|vec)\\b",
+			"comment": "定义关键字"
+		},
+		{
+			"name": "constant.numeric",
+			"match": "[+-]?(\\d+(\\.\\d*)?|\\.\\d+)([eE][+-]?\\d+)?",
+			"comment": "数字"
+		},
+		{
+			"name": "constant.language",
+			"match": "\\b(true|false|null|garbage)\\b",
+			"comment": "常量"
+		},
+		{
+			"name": "keyword.operator",
+			"match": "(=|,|&|\\[|\\]|<|>)",
+			"comment": "操作符"
+		},
+		{
+			"name": "variable.name",
+			"match": "\\b[a-zA-Z0-9_/]+\\b",
+			"comment": "图案"
+		},
+		{
+		  "name": "meta.list",
+		  "begin": "\\[",
+		  "end": "\\]",
+		  "patterns": [
+			{ "include": "$self" }
+		  ],
+		  "comment": "列表结构"
+		}
+	]
+}

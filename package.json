@@ -1,0 +1,100 @@
+{
+  "name": "hexcasting",
+  "displayName": "Hex Casting",
+  "description": "",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WolfGenerals/hex-casting.git"
+  },
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.hc"
+  ],
+  "main": "./dist/extension/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hexcasting.build",
+        "title": "Build",
+        "category": "Hex Casting",
+        "icon": "src/resources/icons/hex casting.svg"
+      }
+    ],
+    "languages": [
+      {
+        "id": "hexcasting",
+        "aliases": [
+          "Hex Casting",
+          "HexCasting"
+        ],
+        "extensions": [
+          ".hc"
+        ],
+        "icon": {
+          "dark": "src/resources/icons/hex casting.svg",
+          "light": "src/resources/icons/hex casting.svg"
+        },
+        "configuration": "./src/resources/config/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hexcasting",
+        "scopeName": "source.hexcasting",
+        "path": "./src/resources/config/hexcasting.tmLanguage.json"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "hexcasting.build",
+          "group": "navigation",
+          "when": "editorLangId == hexcasting"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "lint": "eslint src",
+    "check-types": "tsc --noEmit",
+    "peg-js": "peggy -o src/compile/peggy/HexCasting.js  ./src/compile/peggy/HexCasting.pegjs --dts",
+    "package-extension": "pnpm vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "fuse.js": "^7.1.0",
+    "lodash": "^4.17.21",
+    "peggy": "^4.2.0",
+    "winston": "^3.17.0",
+    "winston-transport": "^4.9.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "keytar"
+    ]
+  }
+}
