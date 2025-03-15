@@ -1,0 +1,1396 @@
+[open_paren]
+name = "Introspection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b], "start_dir": 4b}}'
+description = "Drawing Introspection makes my drawing of patterns act differently, for a time. Until I draw Retrospection, the patterns I draw are saved. Then, when I draw Retrospection, they are added to the stack as a list iota."
+
+[close_paren]
+name = "Retrospection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b], "start_dir": 1b}}'
+description = "If I draw another Introspection, it'll still be saved to the list, but I'll then have to draw two Retrospections to get back to normal casting."
+
+[escape]
+name = "Consideration"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 4b, 0b], "start_dir": 4b}}'
+description = "To use Consideration, I draw it, then another arbitrary pattern. That second pattern is added to the stack."
+
+[number]
+name = "Numerical Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+args = "→ number"
+description = "Irritatingly, there is no easy way to draw numbers. Here is the method Nature deigned to give us."
+
+[mask]
+name = "Bookkeeper's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+args = "many → many"
+description = "An infinite family of actions that keep or remove elements at the top of the stack based on the sequence of dips and lines."
+
+[get_caster]
+name = "Mind's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b], "start_dir": 0b}}'
+args = "→ entity"
+description = "Adds me, the caster, to the stack."
+
+["entity_pos/eye"]
+name = "Compass' Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b], "start_dir": 1b}}'
+args = "entity → vector"
+description = "Transforms an entity on the stack into the position of its eyes. I should probably use this on myself."
+
+["entity_pos/foot"]
+name = "Compass' Purification II"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b], "start_dir": 0b}}'
+args = "entity → vector"
+description = "Transforms an entity on the stack into the position it is standing. I should probably use this on other entities."
+
+[get_entity_look]
+name = "Alidade's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b], "start_dir": 1b}}'
+args = "entity → vector"
+description = "Transforms an entity on the stack into the direction it's looking in, as a unit vector."
+
+[get_entity_height]
+name = "Stadiometer's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 5b], "start_dir": 0b}}'
+args = "entity → num"
+description = "Transforms an entity on the stack into its height."
+
+[get_entity_velocity]
+name = "Pace Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b], "start_dir": 1b}}'
+args = "entity → vector"
+description = "Transforms an entity on the stack into the direction in which it's moving, with the speed of that movement as that direction's magnitude."
+
+[raycast]
+name = "Archer's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 4b, 0b, 2b, 2b], "start_dir": 1b}}'
+args = "vector, vector → vector"
+description = "Combines two vectors (a position and a direction) into the answer to the question: If I stood at the position and looked in the direction, what block would I be looking at? Costs a negligible amount of media."
+
+["raycast/axis"]
+name = "Architect's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 2b, 2b, 0b, 4b, 4b], "start_dir": 1b}}'
+args = "vector, vector → vector"
+description = "Like Archer's Distillation, but instead returns a vector representing the answer to the question: Which side of the block am I looking at? Costs a negligible amount of media."
+
+["raycast/entity"]
+name = "Scout's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 4b, 5b, 4b], "start_dir": 1b}}'
+args = "vector, vector → entity"
+description = "Like Archer's Distillation, but instead returns the entity I am looking at. Costs a negligible amount of media."
+
+["circle/impetus_pos"]
+name = "Waystone Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 0b, 5b, 4b, 1b], "start_dir": 3b}}'
+args = "→ vector"
+description = "Returns the position of the Impetus of this spell circle."
+
+["circle/impetus_dir"]
+name = "Lodestone Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 0b, 5b, 4b, 1b, 0b, 1b, 2b, 1b], "start_dir": 3b}}'
+args = "→ vector"
+description = "Returns the direction the Impetus of this spell circle is facing as a unit vector."
+
+["circle/bounds/min"]
+name = "Lesser Fold Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 0b, 5b, 4b, 1b, 0b, 2b, 2b], "start_dir": 3b}}'
+args = "→ vector"
+description = "Returns the position of the lower-north-west corner of the bounds of this spell circle."
+
+["circle/bounds/max"]
+name = "Greater Fold Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 0b, 5b, 4b, 0b, 4b, 4b, 5b, 4b], "start_dir": 4b}}'
+args = "→ vector"
+description = "Returns the position of the upper-south-east corner of the bounds of this spell circle."
+
+[swap]
+name = "Jester's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 2b, 2b], "start_dir": 1b}}'
+args = "any, any → any, any"
+description = "Swaps the top two iotas of the stack."
+
+[rotate]
+name = "Rotation Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 1b, 4b, 4b], "start_dir": 1b}}'
+args = "any, any, any → any, any, any"
+description = "Yanks the iota third from the top of the stack to the top. [0, 1, 2] becomes [1, 2, 0]."
+
+[rotate_reverse]
+name = "Rotation Gambit II"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 5b, 2b, 2b], "start_dir": 0b}}'
+args = "any, any, any → any, any, any"
+description = "Yanks the top iota to the third position. [0, 1, 2] becomes [2, 0, 1]."
+
+[duplicate]
+name = "Gemini Decomposition"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 4b, 4b], "start_dir": 1b}}'
+args = "any → any, any"
+description = "Duplicates the top iota of the stack."
+
+[over]
+name = "Prospector's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 1b, 2b, 2b], "start_dir": 1b}}'
+args = "any, any → any, any, any"
+description = "Copy the second-to-last iota of the stack to the top. [0, 1] becomes [0, 1, 0]."
+
+[tuck]
+name = "Undertaker's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 5b, 4b, 4b], "start_dir": 1b}}'
+args = "any, any → any, any, any"
+description = "Copy the top iota of the stack, then put it under the second iota. [0, 1] becomes [1, 0, 1]."
+
+[2dup]
+name = "Dioscuri Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 4b, 2b, 4b, 4b, 0b], "start_dir": 1b}}'
+args = "any, any → any, any, any, any"
+description = "Copy the top two iotas of the stack. [0, 1] becomes [0, 1, 0, 1]."
+
+[stack_len]
+name = "Flock's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 4b, 1b, 4b, 0b, 5b, 4b, 1b, 4b, 5b, 4b], "start_dir": 5b}}'
+args = "→ number"
+description = "Pushes the size of the stack as a number to the top of the stack. (For example, a stack of [0, 1] will become [0, 1, 2].)"
+
+[duplicate_n]
+name = "Gemini Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 4b, 4b, 2b, 4b, 4b], "start_dir": 1b}}'
+args = "any, number → many"
+description = "Removes the number at the top of the stack, then copies the top iota of the stack that number of times. (A count of 2 results in two of the iota on the stack, not three.)"
+
+[fisherman]
+name = "Fisherman's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 4b, 2b], "start_dir": 4b}}'
+args = "number → any"
+description = "Grabs the element in the stack indexed by the number and brings it to the top."
+
+["fisherman/copy"]
+name = "Fisherman's Gambit II"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 4b], "start_dir": 1b}}'
+args = "number → any"
+description = "Like Fisherman's Gambit, but instead of moving the iota, copies it."
+
+[swizzle]
+name = "Swindler's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 0b, 2b, 2b, 1b], "start_dir": 2b}}'
+args = "many, number → many"
+description = "Rearranges the top elements of the stack based on the given numerical code, which is the index of the permutation wanted."
+
+[add]
+name = "Additive Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b, 0b], "start_dir": 0b}}'
+args = "num/vec, num/vec → num/vec"
+description = "Perform addition."
+
+[sub]
+name = "Subtractive Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 2b, 0b], "start_dir": 5b}}'
+args = "num/vec, num/vec → num/vec"
+description = "Perform subtraction."
+
+[mul_dot]
+name = "Multiplicative Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 5b, 4b, 0b], "start_dir": 2b}}'
+args = "num/vec, num/vec → num/vec"
+description = "Perform multiplication or the dot product."
+
+[div_cross]
+name = "Division Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 1b, 2b, 0b], "start_dir": 0b}}'
+args = "num/vec, num/vec → num/vec"
+description = "Perform division or the cross product."
+
+[abs_len]
+name = "Length Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 5b, 0b], "start_dir": 0b}}'
+args = "num/vec → number"
+description = "Compute the absolute value or length."
+
+[pow_proj]
+name = "Power Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 2b, 1b, 0b], "start_dir": 5b}}'
+args = "num/vec, num/vec → num/vec"
+description = "Perform exponentiation or vector projection."
+
+[floor]
+name = "Floor Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 5b], "start_dir": 1b}}'
+args = "num → num"
+description = '"Floors" a number, cutting off the fractional component and leaving an integer value.'
+
+[ceil]
+name = "Ceiling Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 1b], "start_dir": 1b}}'
+args = "num → num"
+description = '"Ceilings" a number, raising it to the next integer value if it has a fractional component.'
+
+[construct_vec]
+name = "Vector Exaltation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "num, num, num → vector"
+description = "Combine three numbers at the top of the stack into a vector's X, Y, and Z components (top to bottom)."
+
+[deconstruct_vec]
+name = "Vector Disintegration"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 1b, 1b, 1b], "start_dir": 1b}}'
+args = "vector → num, num, num"
+description = "Split a vector into its X, Y, and Z components (top to bottom)."
+
+[coerce_axial]
+name = "Axial Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b], "start_dir": 5b}}'
+args = "vec → vec"
+description = "Coerces a vector to its nearest axial direction, a unit vector. The zero vector is unaffected."
+
+[and]
+name = "Conjunction Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b], "start_dir": 0b}}'
+args = "bool, bool → bool"
+description = "Returns True if both arguments are true; otherwise returns False."
+
+[or]
+name = "Disjunction Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b], "start_dir": 2b}}'
+args = "bool, bool → bool"
+description = "Returns True if at least one of the arguments are True; otherwise returns False."
+
+[xor]
+name = "Exclusion Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 4b], "start_dir": 5b}}'
+args = "bool, bool → bool"
+description = "Returns True if exactly one of the arguments is true; otherwise returns False."
+
+[greater]
+name = "Maximus Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b], "start_dir": 2b}}'
+args = "number, number → number"
+description = "If the first argument is greater than the second, return True. Otherwise, return False."
+
+[less]
+name = "Minimus Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b], "start_dir": 3b}}'
+args = "number, number → number"
+description = "If the first argument is less than the second, return True. Otherwise, return False."
+
+[greater_eq]
+name = "Maximus Distillation II"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b], "start_dir": 2b}}'
+args = "number, number → number"
+description = "If the first argument is greater than or equal to the second, return True. Otherwise, return False."
+
+[less_eq]
+name = "Minimus Distillation II"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b], "start_dir": 3b}}'
+args = "number, number → number"
+description = "If the first argument is less than or equal to the second, return True. Otherwise, return False."
+
+[equals]
+name = "Equality Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b], "start_dir": 1b}}'
+args = "any, any → number"
+description = "If the first argument equals the second (within a small tolerance), return True. Otherwise, return False."
+
+[not_equals]
+name = "Inequality Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b], "start_dir": 1b}}'
+args = "any, any → number"
+description = "If the first argument does not equal the second (outside a small tolerance), return True. Otherwise, return False."
+
+[not]
+name = "Negation Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b], "start_dir": 5b}}'
+args = "any → number"
+description = "If the argument is True, return False; if it is False, return True."
+
+[bool_coerce]
+name = "Augur's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b], "start_dir": 0b}}'
+args = "any → bool"
+description = "Convert an argument to a boolean. The number 0, Null, and the empty list become False; everything else becomes True."
+
+[if]
+name = "Augur's Exaltation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 2b, 2b], "start_dir": 2b}}'
+args = "bool, any, any → any"
+description = "If the first argument is True, keeps the second and discards the third; otherwise discards the second and keeps the third."
+
+[random]
+name = "Entropy Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b], "start_dir": 5b}}'
+args = "→ num"
+description = "Creates a random number between 0 and 1."
+
+[sin]
+name = "Sine Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 4b], "start_dir": 2b}}'
+args = "num → num"
+description = "Takes the sine of an angle in radians, yielding the vertical component of that angle drawn on a unit circle. Related to the values of Ï€ and Ï„."
+
+[cos]
+name = "Cosine Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 2b], "start_dir": 2b}}'
+args = "num → num"
+description = "Takes the cosine of an angle in radians, yielding the horizontal component of that angle drawn on a unit circle. Related to the values of Ï€ and Ï„."
+
+[tan]
+name = "Tangent Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 5b, 5b, 5b, 4b, 2b, 5b], "start_dir": 3b}}'
+args = "num → num"
+description = "Takes the tangent of an angle in radians, yielding the slope of that angle drawn on a circle. Related to the values of Ï€ and Ï„."
+
+[arcsin]
+name = "Inverse Sine Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 1b, 1b, 1b, 1b], "start_dir": 2b}}'
+args = "num → num"
+description = "Takes the inverse sine of a value with absolute value 1 or less, yielding the angle whose sine is that value. Related to the values of Ï€ and Ï„."
+
+[arccos]
+name = "Inverse Cosine Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 1b, 1b, 1b, 1b, 1b], "start_dir": 0b}}'
+args = "num → num"
+description = "Takes the inverse cosine of a value with absolute value 1 or less, yielding the angle whose cosine is that value. Related to the values of Ï€ and Ï„."
+
+[arctan]
+name = "Inverse Tangent Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 2b, 1b, 1b, 1b, 1b, 1b, 0b], "start_dir": 0b}}'
+args = "num → num"
+description = "Takes the inverse tangent of a value, yielding the angle whose tangent is that value. Related to the values of Ï€ and Ï„."
+
+[logarithm]
+name = "Logarithmic Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 4b, 5b, 1b], "start_dir": 5b}}'
+args = "num, num → num"
+description = "Removes the number at the top of the stack, then takes the logarithm of the number at the top using the other number as its base. Related to the value of e."
+
+[modulo]
+name = "Modulus Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 2b, 0b, 4b, 4b, 2b], "start_dir": 0b}}'
+args = "num, num → num"
+description = "Takes the modulus of two numbers. This is the amount remaining after division - for example, 5 % 2 is 1, and 5 % 3 is 2."
+
+[and_bit]
+name = "Intersection Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 1b, 4b, 5b, 4b], "start_dir": 0b}}'
+args = "num, num/list, list → num/list"
+description = "Takes the intersection of two sets."
+
+[or_bit]
+name = "Unifying Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 1b, 4b, 5b, 4b], "start_dir": 2b}}'
+args = "num, num/list, list → num/list"
+description = "Unifies two sets."
+
+[xor_bit]
+name = "Exclusionary Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 4b, 1b, 4b, 5b, 4b], "start_dir": 5b}}'
+args = "num, num/list, list → num/list"
+description = "Takes the exclusive disjunction of two sets."
+
+[not_bit]
+name = "Inversion Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 1b, 4b, 5b, 4b], "start_dir": 5b}}'
+args = "num → num"
+description = 'Takes the inversion of a bitset, changing all "on" bits to "off" and vice versa. In my experience, this will take the form of that number negated and decreased by one. For example, 0 will become -1, and -100 will become 99.'
+
+[to_set]
+name = "Uniqueness Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 4b, 5b, 4b], "start_dir": 0b}}'
+args = "list → list"
+description = "Removes duplicate entries from a list."
+
+[print]
+name = "Reveal"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b], "start_dir": 0b}}'
+args = "any → any"
+description = "Displays the top iota of the stack to me."
+
+[explode]
+name = "Explosion"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 4b, 4b, 0b, 4b, 4b], "start_dir": 1b}}'
+args = "vector, number →"
+description = "Remove a number and vector from the stack, then create an explosion at the given location with the given power."
+
+["explode/fire"]
+name = "Fireball"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 0b, 2b, 2b, 0b, 2b, 2b], "start_dir": 1b}}'
+args = "vector, number →"
+description = "Remove a number and vector from the stack, then create a fiery explosion at the given location with the given power."
+
+[add_motion]
+name = "Impulse"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 5b, 5b, 5b, 0b, 4b, 5b, 0b], "start_dir": 3b}}'
+args = "entity, vector →"
+description = "Remove an entity and direction from the stack, then give a shove to the given entity in the given direction. The strength of the impulse is determined by the length of the vector. Costs units of Amethyst Dust equal to the square of the length of the vector, plus one for every Impulse except the first targeting an entity."
+
+[blink]
+name = "Blink"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 5b, 5b, 5b, 0b, 4b, 5b], "start_dir": 3b}}'
+args = "entity, number →"
+description = "Remove an entity and length from the stack, then teleport the given entity along its look vector by the given length. Costs about one Amethyst Shard per two blocks travelled."
+
+[break_block]
+name = "Break Block"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "vector →"
+description = "Remove a location from the stack, then break the block at the given location. This spell can break nearly anything a Diamond Pickaxe can break. Costs a bit more than one Amethyst Dust."
+
+[place_block]
+name = "Place Block"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 2b, 1b], "start_dir": 3b}}'
+args = "vector →"
+description = "Remove a location from the stack, then pick a block item and place it at the given location. Costs a negligible amount of media."
+
+[colorize]
+name = "Internalize Pigment"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 2b, 2b, 0b, 5b, 4b, 0b, 5b, 0b, 4b, 0b, 5b], "start_dir": 1b}}'
+description = "I must be holding a Pigment in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind's coloration (at least, until I cast the spell again). Costs about one Amethyst Dust."
+
+[create_water]
+name = "Create Water"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 5b, 4b, 2b, 4b, 5b], "start_dir": 2b}}'
+args = "vector →"
+description = "Summon a block of water (or insert up to a bucket's worth) into a block at the given position. Costs about one Amethyst Dust."
+
+[destroy_water]
+name = "Destroy Liquid"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 0b, 1b, 2b, 4b, 2b, 1b], "start_dir": 3b}}'
+args = "vector →"
+description = "Drains either a liquid container at, or a body of liquid around, the given position. Costs about two Charged Amethyst."
+
+[ignite]
+name = "Ignite Block"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 5b, 4b, 0b, 4b, 0b, 4b], "start_dir": 2b}}'
+args = "vector →"
+description = "Start a fire on top of the given location, as if a Fire Charge was applied. Costs about one Amethyst Dust."
+
+[extinguish]
+name = "Extinguish Area"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 2b, 0b, 2b, 0b, 2b], "start_dir": 3b}}'
+args = "vector →"
+description = "Extinguish blocks in a large area. Costs about six Amethyst Dust."
+
+[conjure_block]
+name = "Conjure Block"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b], "start_dir": 0b}}'
+args = "vector →"
+description = "Conjure an ethereal, but solid, block that sparkles with my pigment at the given position. Costs about one Amethyst Dust."
+
+[conjure_light]
+name = "Conjure Light"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 2b], "start_dir": 0b}}'
+args = "vector →"
+description = "Conjure a magical light that softly glows with my pigment at the given position. Costs about one Amethyst Dust."
+
+[bonemeal]
+name = "Overgrow"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 5b, 0b, 4b, 0b, 5b, 4b, 5b, 0b], "start_dir": 0b}}'
+args = "vector →"
+description = "Encourage a plant or sapling at the target position to grow, as if Bonemeal was applied. Costs a bit more than one Amethyst Dust."
+
+[recharge]
+name = "Recharge Item"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 1b, 4b], "start_dir": 5b}}'
+args = "entity →"
+description = "Recharge a media-containing item in my other hand. Costs about one Amethyst Shard."
+
+[erase]
+name = "Erase Item"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 5b, 4b, 0b, 0b, 4b, 0b, 0b], "start_dir": 1b}}'
+description = "Clear a Hex-containing item in my other hand. Costs about one Amethyst Dust."
+
+[edify]
+name = "Edify Sapling"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 5b, 0b, 2b], "start_dir": 0b}}'
+args = "vector →"
+description = "Forcibly infuse media into the sapling at the target position, causing it to grow into an Edified Tree. Costs about one Charged Amethyst."
+
+[beep]
+name = "Make Note"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 4b, 4b], "start_dir": 4b}}'
+args = "vector, number, number →"
+description = "Remove a vector and two numbers from the stack. Plays an instrument defined by the first number at the given location, with a note defined by the second number. Costs a negligible amount of media."
+
+["craft/cypher"]
+name = "Craft Cypher"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 5b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "entity, list of patterns →"
+description = "Costs about one Charged Amethyst."
+
+["craft/trinket"]
+name = "Craft Trinket"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 5b, 1b, 4b, 1b, 5b, 5b, 5b, 1b, 4b, 1b, 5b], "start_dir": 1b}}'
+args = "entity, list of patterns →"
+description = "Costs about five Charged Amethysts."
+
+["craft/artifact"]
+name = "Craft Artifact"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 0b, 5b, 5b, 1b, 4b, 2b, 4b, 1b, 5b, 5b, 1b, 5b, 5b, 1b, 4b, 2b, 4b, 1b, 5b, 5b], "start_dir": 1b}}'
+args = "entity, list of patterns →"
+description = "Costs about ten Charged Amethysts."
+
+["craft/battery"]
+name = "Craft Phial"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 4b, 5b, 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 5b, 4b, 5b, 5b, 5b, 4b, 0b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 3b}}'
+args = "entity →"
+description = "Infuse a bottle with media to form a Phial."
+
+["potion/weakness"]
+name = "White Sun's Nadir"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 5b, 0b, 4b, 0b, 4b, 0b], "start_dir": 5b}}'
+args = "entity, number, number →"
+description = "Inflicts weakness. Base cost is one Amethyst Dust per 10 seconds."
+
+["potion/levitation"]
+name = "Blue Sun's Nadir"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 4b, 0b, 4b, 0b, 2b], "start_dir": 4b}}'
+args = "entity, number →"
+description = "Inflicts levitation. Base cost is one Amethyst Dust per 5 seconds."
+
+["potion/wither"]
+name = "Black Sun's Nadir"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 1b, 0b, 4b, 0b, 4b, 0b, 1b], "start_dir": 3b}}'
+args = "entity, number, number →"
+description = "Inflicts withering. Base cost is one Amethyst Dust per second."
+
+["potion/poison"]
+name = "Red Sun's Nadir"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 2b, 0b, 4b, 0b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "entity, number, number →"
+description = "Inflicts poison. Base cost is one Amethyst Dust per 3 seconds."
+
+["potion/slowness"]
+name = "Green Sun's Nadir"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 2b, 0b, 4b, 0b, 4b, 0b], "start_dir": 2b}}'
+args = "entity, number, number →"
+description = "Inflicts slowness. Base cost is one Amethyst Dust per 5 seconds."
+
+["potion/regeneration"]
+name = "White Sun's Zenith"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 4b, 4b, 0b, 4b, 0b, 4b, 1b, 2b, 2b], "start_dir": 5b}}'
+args = "entity, number, number →"
+description = "Bestows regeneration. Base cost is one Amethyst Dust per second."
+
+["potion/night_vision"]
+name = "Blue Sun's Zenith"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 4b, 4b, 0b, 4b, 0b, 4b, 1b, 5b, 2b, 2b], "start_dir": 4b}}'
+args = "entity, number →"
+description = "Bestows night vision. Base cost is one Amethyst Dust per 5 seconds."
+
+["potion/absorption"]
+name = "Black Sun's Zenith"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 4b, 0b, 4b, 0b, 4b, 1b, 5b, 5b, 2b, 2b], "start_dir": 3b}}'
+args = "entity, number, number →"
+description = "Bestows absorption. Base cost is one Amethyst Dust per second."
+
+["potion/haste"]
+name = "Red Sun's Zenith"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 0b, 4b, 0b, 4b, 1b, 5b, 5b, 5b, 2b, 2b], "start_dir": 2b}}'
+args = "entity, number, number →"
+description = "Bestows haste. Base cost is one Amethyst Dust per 3 seconds."
+
+["potion/strength"]
+name = "Green Sun's Zenith"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 4b, 0b, 4b, 1b, 5b, 5b, 5b, 5b, 2b, 2b], "start_dir": 1b}}'
+args = "entity, number, number →"
+description = "Bestows strength. Base cost is one Amethyst Dust per 3 seconds."
+
+["sentinel/create"]
+name = "Summon Sentinel"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 0b, 4b, 1b], "start_dir": 1b}}'
+args = "vector →"
+description = "Summons my sentinel at the given position. Costs about one Amethyst Dust."
+
+["sentinel/destroy"]
+name = "Banish Sentinel"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 0b, 2b, 5b, 2b, 0b], "start_dir": 0b}}'
+description = "Banish my sentinel, and remove it from the world. Costs a negligible amount of media."
+
+["sentinel/get_pos"]
+name = "Locate Sentinel"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 0b, 4b, 1b, 2b, 1b], "start_dir": 1b}}'
+args = "→ vector"
+description = "Add the position of my sentinel to the stack, or Null if it isn't summoned. Costs a negligible amount of media."
+
+["sentinel/wayfind"]
+name = "Wayfind Sentinel"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 0b, 4b, 1b, 2b, 0b, 4b], "start_dir": 1b}}'
+args = "vector → vector"
+description = "Transform the position vector on the top of the stack into a unit vector pointing from that position to my sentinel, or Null if it isn't summoned. Costs a negligible amount of media."
+
+[lightning]
+name = "Summon Lightning"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b, 2b, 0b, 4b, 0b, 2b, 4b, 4b, 0b, 1b, 1b, 0b, 5b], "start_dir": 1b}}'
+args = "vector →"
+description = "I command the heavens! This spell will summon a bolt of lightning to strike the earth where I direct it. Costs about three Amethyst Shards."
+
+[flight]
+name = "Flight"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 0b, 0b, 4b, 1b, 4b, 0b, 4b, 0b, 4b, 4b], "start_dir": 5b}}'
+args = "entity, number, number →"
+description = "The power of flight! I have wrestled Nature to its knees. But Nature is vengeful, and itches for me to break its contract so it may break my shins."
+
+[create_lava]
+name = "Create Lava"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 4b, 0b, 5b, 4b, 2b, 4b, 5b, 2b], "start_dir": 1b}}'
+args = "vector →"
+description = "Summon a block of lava (or insert up to a bucket's worth) into a block at the given position. Costs about one Charged Amethyst."
+
+[teleport]
+name = "Greater Teleport"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 0b, 5b, 5b, 5b, 0b, 0b, 0b, 5b, 5b, 1b, 5b, 5b, 0b, 0b, 0b, 5b, 5b, 0b, 5b, 5b, 2b, 5b, 5b, 5b, 5b, 5b, 2b, 5b, 5b], "start_dir": 1b}}'
+args = "entity, vector →"
+description = "Far more powerful than Blink, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is much greater than the normal radius of influence I am used to."
+
+["sentinel/create/great"]
+name = "Summon Greater Sentinel"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 0b, 4b, 1b, 5b, 5b, 5b, 0b, 5b, 0b, 5b, 5b, 0b, 5b], "start_dir": 1b}}'
+args = "vector →"
+description = "Summon a greater version of my Sentinel. Costs about two Amethyst Dust."
+
+[dispel_rain]
+name = "Dispel Rain"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 0b, 0b, 0b, 1b, 1b, 1b, 0b, 0b, 4b, 5b, 5b, 2b, 2b, 5b, 2b, 5b, 2b], "start_dir": 1b}}'
+description = "A counterpart to summoning rain. This spell will dispel rain across the world I cast it upon. Costs about one Amethyst Shard. Does nothing if the skies are already clear."
+
+[summon_rain]
+name = "Summon Rain"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 0b, 1b, 1b, 1b, 0b, 0b, 0b, 1b, 1b, 0b, 2b, 4b, 0b, 2b, 0b, 4b, 2b], "start_dir": 4b}}'
+description = "I control the clouds! This spell will summon rain across the world I cast it upon. Costs about one Charged Amethyst. Does nothing if it is already raining."
+
+[brainsweep]
+name = "Flay Mind"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 1b, 5b, 4b, 1b, 5b, 1b, 4b, 5b, 1b, 5b, 4b, 1b, 5b, 4b, 5b, 2b, 1b, 2b], "start_dir": 0b}}'
+args = "entity, vector →"
+description = "I cannot make heads or tails of this spell... To be honest, I'm not sure I want to know what it does."
+
+["akashic/read"]
+name = "Akasha's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 0b, 5b, 5b, 5b, 5b, 5b, 4b, 5b], "start_dir": 4b}}'
+args = "vector, pattern → any"
+description = "Read the iota associated with the given pattern out of the Akashic Library with its Record at the given position. This has no range limit. Costs about one Amethyst Dust."
+
+["akashic/write"]
+name = "Akasha's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 0b, 1b, 1b, 1b, 1b, 1b, 2b, 1b], "start_dir": 1b}}'
+args = "vector, pattern, any →"
+description = "Associate the iota with the given pattern in the Akashic Library with its Record at the given position. This does have a range limit. Costs about one Amethyst Dust."
+
+[eval]
+name = "Hermes' Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 4b, 5b, 5b], "start_dir": 2b}}'
+args = "[pattern] | pattern → many"
+description = "Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my Staff (until a Charon's Gambit is encountered). If an iota is escaped with Consideration or its ilk, it will be pushed to the stack. Otherwise, non-patterns will fail."
+
+[halt]
+name = "Charon's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 2b, 1b, 1b], "start_dir": 3b}}'
+description = "This pattern forcibly halts a Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff."
+
+[read]
+name = "Scribe's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "→ any"
+description = "Copy the iota stored in the item in my other hand and add it to the stack."
+
+["read/entity"]
+name = "Chronicler's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 1b}}'
+args = "entity → any"
+description = "Like Scribe's Reflection, but the iota is read out of an entity instead of my other hand."
+
+[write]
+name = "Scribe's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b], "start_dir": 1b}}'
+args = "any →"
+description = "Remove the top iota from the stack, and save it into the item in my other hand."
+
+["write/entity"]
+name = "Chronicler's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b], "start_dir": 1b}}'
+args = "entity, any →"
+description = "Like Scribe's Gambit, but the iota is written to an entity instead of my other hand.Interestingly enough, it looks like I cannot write my own Name using this spell. I get a sense that I might be endangered if I could."
+
+[readable]
+name = "Auditor's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b], "start_dir": 1b}}'
+args = "→ bool"
+description = "If the item in my other hand holds an iota I can read, returns True. Otherwise, returns False."
+
+["readable/entity"]
+name = "Auditor's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 1b, 0b], "start_dir": 1b}}'
+args = "entity → bool"
+description = "Like Auditor's Reflection, but the readability of an entity is checked instead of my other hand."
+
+[writable]
+name = "Assessor's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b], "start_dir": 1b}}'
+args = "→ bool"
+description = "If I could save an iota into the item in my other hand, returns True. Otherwise, returns False."
+
+["writable/entity"]
+name = "Assessor's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 5b, 0b], "start_dir": 1b}}'
+args = "entity → bool"
+description = "Like Assessor's Reflection, but the writability of an entity is checked instead of my other hand."
+
+["read/local"]
+name = "Muninn's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 0b, 2b, 0b, 1b, 2b, 2b, 0b], "start_dir": 0b}}'
+args = "→ any"
+description = "Copy the iota out of my ravenmind, which I likely just wrote with Huginn's Gambit."
+
+["write/local"]
+name = "Huginn's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 0b, 4b, 0b, 5b, 4b, 4b, 0b], "start_dir": 5b}}'
+args = "any →"
+description = "Removes the top iota from the stack, and saves it to my ravenmind, storing it there until I stop casting the Hex."
+
+["const/null"]
+name = "Nullary Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b], "start_dir": 1b}}'
+args = "→ influence"
+description = "Adds the Null influence to the top of the stack."
+
+["const/true"]
+name = "True Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 1b], "start_dir": 2b}}'
+args = "→ bool"
+description = "Adds True to the top of the stack."
+
+["const/false"]
+name = "False Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 5b], "start_dir": 0b}}'
+args = "→ bool"
+description = "Adds False to the top of the stack."
+
+["const/vec/px"]
+name = "Vector Reflection +X"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 4b], "start_dir": 5b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [1, 0, 0] to the stack; the right-hand clockwise pattern adds [-1, 0, 0]."
+
+["const/vec/py"]
+name = "Vector Reflection +Y"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 0b], "start_dir": 5b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [0, 1, 0] to the stack; the right-hand clockwise pattern adds [0, -1, 0]."
+
+["const/vec/pz"]
+name = "Vector Reflection +Z"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 2b], "start_dir": 5b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [0, 0, 1]; the right-hand clockwise pattern adds [0, 0, -1]."
+
+["const/vec/nx"]
+name = "Vector Reflection -X"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 4b], "start_dir": 3b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [1, 0, 0] to the stack; the right-hand clockwise pattern adds [-1, 0, 0]."
+
+["const/vec/ny"]
+name = "Vector Reflection -Y"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 0b], "start_dir": 3b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [0, 1, 0] to the stack; the right-hand clockwise pattern adds [0, -1, 0]."
+
+["const/vec/nz"]
+name = "Vector Reflection -Z"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 2b], "start_dir": 3b}}'
+args = "→ vector"
+description = "The left-hand counter-clockwise pattern adds [0, 0, 1]; the right-hand clockwise pattern adds [0, 0, -1]."
+
+["const/vec/0"]
+name = "Vector Reflection Zero"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b], "start_dir": 5b}}'
+args = "→ vector"
+description = "Adds [0, 0, 0] to the stack."
+
+["const/double/pi"]
+name = "Arc's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 0b, 2b, 5b], "start_dir": 0b}}'
+args = "→ num"
+description = "Adds Ï€, the radial representation of half a circle, to the stack."
+
+["const/double/tau"]
+name = "Circle's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 0b, 4b, 1b], "start_dir": 5b}}'
+args = "→ num"
+description = "Adds Ï„, the radial representation of a complete circle, to the stack."
+
+["const/double/e"]
+name = "Euler's Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 5b], "start_dir": 1b}}'
+args = "→ num"
+description = "Adds e, the base of natural logarithms, to the stack."
+
+[get_entity]
+name = "Entity Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the entity at that location (or Null if there isn't one)."
+
+["get_entity/animal"]
+name = "Entity Purification: Animal"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 4b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the animal at that location (or Null if there isn't one)."
+
+["get_entity/monster"]
+name = "Entity Purification: Monster"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 5b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the monster at that location (or Null if there isn't one)."
+
+["get_entity/item"]
+name = "Entity Purification: Item"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the dropped item at that location (or Null if there isn't one)."
+
+["get_entity/player"]
+name = "Entity Purification: Player"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 1b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the player at that location (or Null if there isn't one)."
+
+["get_entity/living"]
+name = "Entity Purification: Living"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 2b], "start_dir": 2b}}'
+args = "vector → entity or null"
+description = "Transform the position on the stack into the living creature at that location (or Null if there isn't one)."
+
+[zone_entity]
+name = "Zone Distillation: Any"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of all entities near the position."
+
+["zone_entity/animal"]
+name = "Zone Distillation: Animal"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 4b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of animals near the position."
+
+["zone_entity/not_animal"]
+name = "Zone Distillation: Non-Animal"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 4b], "start_dir": 0b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-animal entities near the position."
+
+["zone_entity/monster"]
+name = "Zone Distillation: Monster"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 5b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of monsters near the position."
+
+["zone_entity/not_monster"]
+name = "Zone Distillation: Non-Monster"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 5b], "start_dir": 0b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-monster entities near the position."
+
+["zone_entity/item"]
+name = "Zone Distillation: Item"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 0b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of dropped items near the position."
+
+["zone_entity/not_item"]
+name = "Zone Distillation: Non-Item"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 0b], "start_dir": 0b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-dropped-item entities near the position."
+
+["zone_entity/player"]
+name = "Zone Distillation: Player"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 1b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of players near the position."
+
+["zone_entity/not_player"]
+name = "Zone Distillation: Non-Player"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 1b], "start_dir": 0b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-player characters near the position."
+
+["zone_entity/living"]
+name = "Zone Distillation: Living"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 2b], "start_dir": 2b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of living creatures near the position."
+
+["zone_entity/not_living"]
+name = "Zone Distillation: Non-Living"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 2b], "start_dir": 0b}}'
+args = "vector, number → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-living entities near the position."
+
+[append]
+name = "Integration Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 5b, 2b, 1b], "start_dir": 3b}}'
+args = "list, any → list"
+description = "Remove the top of the stack, then add it to the end of the list at the top of the stack."
+
+[concat]
+name = "Combination Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 1b, 4b, 5b], "start_dir": 5b}}'
+args = "list, list → list"
+description = "Remove the list at the top of the stack, then add all its elements to the end of the list at the top of the stack."
+
+[index]
+name = "Selection Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 2b], "start_dir": 5b}}'
+args = "list, number → any"
+description = "Remove the number at the top of the stack, then replace the list at the top with the nth element of that list (where n is the number you removed). Replaces the list with Null if the number is out of bounds."
+
+[for_each]
+name = "Thoth's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b, 2b, 4b, 2b], "start_dir": 0b}}'
+args = "list of patterns, list → list"
+description = "Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list."
+
+[list_size]
+name = "Abacus Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 1b, 4b, 5b], "start_dir": 1b}}'
+args = "list → num"
+description = "Remove the list at the top of the stack, then push the number of elements in the list to the stack."
+
+[singleton]
+name = "Single's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 1b, 1b, 1b, 2b], "start_dir": 1b}}'
+args = "any → list"
+description = "Remove the top of the stack, then push a list containing only that element."
+
+[empty_list]
+name = "Vacant Reflection"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 1b, 4b, 4b, 1b], "start_dir": 0b}}'
+args = "→ list"
+description = "Push an empty list to the top of the stack."
+
+[reverse_list]
+name = "Retrograde Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 4b, 1b, 2b, 1b], "start_dir": 1b}}'
+args = "list → list"
+description = "Reverse the list at the top of the stack."
+
+[last_n_list]
+name = "Flock's Gambit"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 2b, 5b, 2b, 0b, 1b], "start_dir": 3b}}'
+args = "many, num → list"
+description = "Remove num elements from the stack, then add them to a list at the top of the stack."
+
+[splat]
+name = "Flock's Disintegration"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 4b, 1b, 4b, 0b, 5b], "start_dir": 5b}}'
+args = "list → many"
+description = "Remove the list at the top of the stack, then push its contents to the stack."
+
+[index_of]
+name = "Locator's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 5b, 2b, 1b], "start_dir": 1b}}'
+args = "list, any → num"
+description = "Remove the iota at the top of the stack, then replace the list at the top with the first index of that iota within the list (starting from 0). Replaces the list with -1 if the iota doesn't exist in the list."
+
+[list_remove]
+name = "Excisor's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 5b, 2b, 1b, 0b, 4b, 5b, 4b], "start_dir": 3b}}'
+args = "list, num → list"
+description = "Remove the number at the top of the stack, then remove the nth element of the list at the top of the stack (where n is the number you removed)."
+
+[slice]
+name = "Selection Exaltation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 1b, 4b, 5b, 0b, 2b, 1b, 2b], "start_dir": 5b}}'
+args = "list, num, num → list"
+description = "Remove the two numbers at the top of the stack, then take a sublist of the list at the top of the stack between those indices, lower bound inclusive, upper bound exclusive. For example, the 0, 2 sublist of [0, 1, 2, 3, 4] would be [0, 1]."
+
+[modify_in_place]
+name = "Surgeon's Exaltation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 1b, 4b, 5b, 0b], "start_dir": 5b}}'
+args = "list, num, any → list"
+description = "Remove the top iota of the stack and the number at the top, then set the nth element of the list at the top of the stack to that iota (where n is the number you removed). Does nothing if the number is out of bounds."
+
+[construct]
+name = "Speaker's Distillation"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 0b, 1b, 2b, 2b], "start_dir": 2b}}'
+args = "list, any → list"
+description = "Remove the top iota, then add it as the first element to the list at the top of the stack."
+
+[deconstruct]
+name = "Speaker's Decomposition"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 5b, 0b, 5b, 4b, 4b], "start_dir": 3b}}'
+args = "list → list, any"
+description = "Remove the first iota from the list at the top of the stack, then push that iota to the stack."
+
+["interop/pehkui/get"]
+name = "Gulliver's Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 4b, 0b, 0b, 4b, 0b, 0b, 4b], "start_dir": 5b}}'
+args = "entity → double"
+description = "Get the scale of the entity, as a proportion of their normal size. For most entities, this will be 1."
+
+["interop/pehkui/set"]
+name = "Alter Scale"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 0b, 2b, 0b, 0b, 2b, 0b, 0b, 2b], "start_dir": 0b}}'
+args = "entity, double →"
+description = "Set the scale of the entity, passing in a proportion of their normal size. Costs about 1 Amethyst Shard."
+
+["interop/gravity/get"]
+name = "Gravitational Purification"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 4b, 0b, 2b, 2b, 1b, 0b], "start_dir": 0b}}'
+args = "entity → vector"
+description = "Get the main direction gravity pulls the given entity in, as a unit vector. For most entities, this will be down, <0, -1, 0>."
+
+["interop/gravity/set"]
+name = "Alter Gravity"
+modid = "hexcasting"
+modName = "Hex Casting"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 2b, 0b, 4b, 4b, 5b, 0b], "start_dir": 5b}}'
+args = "entity, vector →"
+description = "Set the main direction gravity pulls the given entity in. The given vector will be coerced into the nearest axis, as per Axial Purification. Costs about one Charged Amethyst."

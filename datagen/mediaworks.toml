@@ -1,0 +1,94 @@
+[astral_projection]
+name = "Astral Projection"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 4b, 2b, 0b, 1b, 0b, 1b, 0b, 2b, 4b, 2b, 1b, 4b, 2b, 0b, 2b, 2b, 4b, 4b, 1b, 2b, 5b, 2b, 1b, 2b, 2b, 1b, 0b], "start_dir": 5b}}'
+args = "number →"
+description = "Finally, no longer am I confined to my mortal shell! The spell projects my mind outside of my body, granting multiple useful abilities for the specified number of seconds."
+
+[astral_pos]
+name = "Astral Locale Reflection"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 5b, 5b, 4b, 5b], "start_dir": 0b}}'
+args = "→ vector"
+description = "Returns the \"eye\" position vector of my astral self, similarly to how Compass' Purification works for my physical body. Returns Null if I am not projecting."
+
+[astral_look]
+name = "Astral Gaze Reflection"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b, 0b, 4b, 5b], "start_dir": 0b}}'
+args = "→ vector"
+description = "Returns the direction my astral self is looking in, similarly to how Alidade's Purification works for my physical body. Returns Null if I am not projecting."
+
+["macula/add"]
+name = "Etch Visage"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 2b, 4b, 4b, 2b, 2b, 0b], "start_dir": 5b}}'
+args = "vec, vis | vec, vis, num →"
+description = "Puts the visage at the specified point in the Macula Space. If the display duration (the third argument) is supplied, the visage is Fleeting, otherwise - Lasting. Costs a negligible amount of media."
+
+["macula/clear"]
+name = "Macula Erasure"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 4b, 0b, 4b], "start_dir": 4b}}'
+description = "Clears my Macula quickly and painlessly. Definitely beats suffering a Black Eye or dying. Costs a negligible amount of media."
+
+["macula/dimensions"]
+name = "Macula Gambit"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 4b, 0b, 4b, 4b], "start_dir": 0b}}'
+args = "→ number, number"
+description = "Returns my current Macula width and height. An absolute must for any sufficiently complex Macula calculations."
+
+["visage/text/unbounded"]
+name = "Calligrapher's Purification"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 5b, 2b, 0b, 2b, 0b, 2b], "start_dir": 0b}}'
+args = "any → visage"
+description = "Extracts current display text from any iota and creates an unbounded text visage iota."
+
+["visage/text/bounded"]
+name = "Calligrapher's Exaltation"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 5b, 2b, 0b, 2b, 0b, 2b, 1b], "start_dir": 0b}}'
+args = "number, number, any → visage"
+description = "Extracts current display text from any iota and creates a bounded text visage iota, with the first number specifying max width and second - max height."
+
+[get_media]
+name = "Media Reflection"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b], "start_dir": 4b}}'
+args = "→ number"
+description = "Returns the amount of media currently available to the hex without overcasting, in units of Amethyst Dust."
+
+[get_entity_media]
+name = "Media Purification I"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 0b], "start_dir": 4b}}'
+args = "entity → number"
+description = "Returns the amount of media in a dropped item entity, or in an entity's inventory if it is a player, in units of Amethyst Dust. Returns 0 if not applicable."
+
+[get_pos_media]
+name = "Media Purification II"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 0b, 4b], "start_dir": 4b}}'
+args = "vector → number"
+description = "Returns the total amount of media in the container at the position, in units of Amethyst Dust. Returns 0 if not applicable. Works for a certain special container as well."
+
+["cloak/read"]
+name = "Medivh's Reflection"
+modid = "mediaworks"
+modName = "Mediaworks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 2b, 4b], "start_dir": 1b}}'
+args = "→ any"
+description = "Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the Featherweave Cloak fabric out of feathers and dust."

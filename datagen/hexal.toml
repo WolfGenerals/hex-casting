@@ -1,0 +1,707 @@
+["type/block_item"]
+name = "Sorter's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 4b, 1b, 4b], "start_dir": 1b}}'
+args = "itemtypable → itemtype"
+description = "Remove a location, mote, item entity, or item frame from the stack, and adds the type of the block at that location, or type of that item, to the stack (e.g. Grass, Stone, Stick, etc.)."
+
+["type/entity"]
+name = "Physician's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 0b, 2b, 1b], "start_dir": 3b}}'
+args = "entity → entitytype"
+description = "Remove an entity from the stack, and adds the type of the entity at that location to the stack."
+
+["type/iota"]
+name = "Classifier's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 2b], "start_dir": 3b}}'
+args = "any → iotatype"
+description = "Remove an iota from the stack, and adds the type of that iota to the stack."
+
+["type/item_held"]
+name = "Sorter's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 1b, 1b, 2b, 5b, 2b], "start_dir": 3b}}'
+args = "→ itemtype"
+description = "Adds the type of the item in the caster's offhand to the stack if there is one present, or the type of the casting hand otherwise."
+
+["get_entity/type"]
+name = "Entity Distillation: Type"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b, 2b, 5b, 5b, 5b, 5b, 5b, 2b, 4b, 2b], "start_dir": 0b}}'
+args = "entitytype, pos → entity | null"
+description = "Remove an entity type and a position from the stack, and returns an entity of that type at that position if one exists."
+
+["zone_entity/type"]
+name = "Zone Exaltation: Type"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 4b, 0b], "start_dir": 2b}}'
+args = "entitytype, pos, num → [entity]"
+description = "Remove an entity type, a position, and a radius from the stack, and returns a list of all entities of that type within that radius of that position."
+
+["zone_entity/not_type"]
+name = "Zone Exaltation: Not-Type"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 5b, 5b, 5b, 5b, 5b, 0b, 2b, 0b], "start_dir": 0b}}'
+args = "entitytype, pos, num → [entity]"
+description = "Remove an entity type, a position, and a radius from the stack, and returns a list of all entities not of that type within that radius of that position"
+
+[current_tick]
+name = "Timekeeper's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 0b, 4b, 4b], "start_dir": 5b}}'
+args = "→ number"
+description = "Adds a number to the stack which seems to be related to how Nature represents time; If I cast the pattern, then cast the same pattern a second later, the number it adds has increased by 20."
+
+[remaining_evals]
+name = "Thanatos' Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 1b, 2b], "start_dir": 2b}}'
+args = "→ number"
+description = "Adds the number of evaluations a hex is still capable of to the stack. This is reduced by Hermes' Gambit and Thoth's Gambit."
+
+[breath]
+name = "Diver's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 2b, 0b, 4b, 5b, 4b, 0b, 2b], "start_dir": 5b}}'
+args = "entity → num"
+description = "Removes a Living entity from the stack and returns how much breath it has left (i.e., how close it is to drowning)."
+
+[health]
+name = "Nurse's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 0b, 4b, 0b, 5b, 4b], "start_dir": 5b}}'
+args = "entity → num"
+description = "Removes a Living entity from the stack and returns how much health it has left (i.e., how close it is to dying)."
+
+[armour]
+name = "Squire's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 5b, 5b, 0b], "start_dir": 5b}}'
+args = "entity → num"
+description = "Removes a Living entity from the stack and returns how much armour it has."
+
+[toughness]
+name = "Boxer's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 1b, 5b, 5b, 5b, 5b, 1b, 4b], "start_dir": 1b}}'
+args = "entity → num"
+description = "Removes a Living entity from the stack and returns how much toughness it has (another property of armour)."
+
+[light_level]
+name = "Lamplighter's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 2b, 5b, 2b, 1b], "start_dir": 0b}}'
+args = "vec → num"
+description = "Removes a position vector from the stack and returns the light level at that position."
+
+[factorial]
+name = "Factorial Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 2b, 1b, 2b, 0b, 4b, 0b], "start_dir": 2b}}'
+args = "num → num"
+description = "Takes a number from the stack and computes its factorial, for example inputting 4 would return 4*3*2*1=24."
+
+["running/sum"]
+name = "Running Sum Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 1b, 4b], "start_dir": 4b}}'
+args = "[num] → [num]"
+description = "Takes a list from the stack and computes its running sum, for example inputting [1,2,5] would return [1,3,8]."
+
+["running/mul"]
+name = "Running Product Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 0b, 4b, 4b, 5b], "start_dir": 0b}}'
+args = "[num] → [num]"
+description = "Takes a list from the stack and computes its running product, for example inputting [1,2,5] would return [1,2,10]."
+
+["everbook/read"]
+name = "Mnemosyne's Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 1b, 1b, 1b, 0b, 1b, 2b, 5b, 2b, 1b, 2b, 2b, 0b], "start_dir": 0b}}'
+args = "vector, pattern →"
+description = "Takes the position of an Akashic Record, as well as a Pattern as a key, and retrieves the iota at that key from your Everbook, storing it in the given Akashic Record if able."
+
+["everbook/write"]
+name = "Elysium's Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 1b, 4b, 5b, 4b, 4b, 0b], "start_dir": 2b}}'
+args = "vector, pattern →"
+description = "Takes the position of an Akashic Record, as well as a Pattern as a key, and stores the iota in that record at that key to your Everbook at the same key."
+
+["everbook/delete"]
+name = "Lethe's Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "pattern →"
+description = "Takes a pattern and removes the entry with that pattern key from your Everbook."
+
+["everbook/toggle_macro"]
+name = "Brigh's Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 1b, 1b, 1b, 0b, 1b, 2b, 0b, 0b], "start_dir": 3b}}'
+args = "pattern →"
+description = "Takes a pattern and marks that entry of your Everbook as a Pattern that when drawn by your hand will be treated as any other of Nature's patterns."
+
+[smelt]
+name = "Smelt"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 5b, 0b, 5b, 5b, 4b, 2b, 4b, 2b], "start_dir": 1b}}'
+args = "vec | entity | mote →"
+description = "Remove a location, item entity, or mote from the stack, then either smelt the block at the location or smelt all the items in the item entity or mote."
+
+[freeze]
+name = "Freeze"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 1b, 1b, 0b, 1b, 1b, 2b, 4b, 2b, 4b], "start_dir": 4b}}'
+args = "vec →"
+description = "Freezes the block at a block location. For example, turns water into ice, and ice into packed ice. Costs one Amethyst Dust."
+
+[falling_block]
+name = "Falling Block"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 1b}}'
+args = "vec →"
+description = "Remove a location from the stack, and force the block there to fall as if it were sand or gravel. Costs one and a half Amethyst Dust."
+
+[place_type]
+name = "Place Block II"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 2b, 1b, 1b, 1b, 1b, 1b], "start_dir": 4b}}'
+args = "(itemtype | mote), vec →"
+description = "Accepts an item type or mote and a location, and attempts to place a block of that item type at that location. If a mote was passed it will instead place from the record referenced by that mote. Costs an eighth of an Amethyst Dust."
+
+[particles]
+name = "Particles"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b, 4b], "start_dir": 0b}}'
+args = "vec | [vec] →"
+description = "Accepts a location or a list of locations, and either creates a particle at the location, or creates lines of particles between the locations in the list. Costs two thousandths of an Amethyst Dust per location."
+
+["wisp/summon/projectile"]
+name = "Summon Projectile Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 1b, 5b, 1b, 1b, 1b, 1b, 1b], "start_dir": 5b}}'
+args = "[pattern], vec, vec, number →"
+description = "This wisp is summoned and launched like an arrow, casting its hex on whatever it hits. The initial stack when it executes will be a reference to itself, then a reference to what it hit."
+
+["wisp/summon/ticking"]
+name = "Summon Cyclic Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 1b, 1b, 0b, 4b, 5b, 4b, 0b, 1b, 1b], "start_dir": 5b}}'
+args = "[pattern], vec, number →"
+description = "Similar to Summon Projectile Wisp, but with only one vector input for the position to summon the wisp. Cyclic wisps are unmoving once summoned, instead executing their hex up to 20 times each second."
+
+["wisp/self"]
+name = "Identity Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 0b, 5b, 5b, 0b, 2b, 1b, 2b, 0b, 5b, 5b, 4b, 0b], "start_dir": 0b}}'
+args = "→ entity"
+description = "Add a reference to the casting wisp to the stack. This must be cast by a wisp; trying to cast it through a staff will fail rather spectacularly."
+
+["wisp/media"]
+name = "Reservoir Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 1b, 1b, 0b, 4b, 5b, 4b, 0b, 1b, 1b, 2b, 0b], "start_dir": 5b}}'
+args = "→ num"
+description = "Add the amount of media in the wisp's reservoir to the stack. This must be cast by a wisp; trying to cast it through a staff will fail rather spectacularly."
+
+["wisp/hex"]
+name = "Manager's Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 1b, 0b, 4b, 5b, 4b, 0b, 1b, 1b, 0b, 4b, 4b, 0b, 0b, 0b], "start_dir": 2b}}'
+args = "entity → [pattern]"
+description = "Removes a reference to a wisp from the stack, and replaces it with the wisp's contained hex. Must be a wisp you summoned, or a wisp that has allowed transfer with the caster or caster's owner."
+
+["wisp/owner"]
+name = "Allegiance Distillation"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 5b, 5b, 0b, 2b, 1b, 2b, 0b, 5b, 5b, 0b, 2b, 2b, 0b, 0b, 0b], "start_dir": 3b}}'
+args = "entity, entity → bool"
+description = "Removes a reference to a wisp and an entity from the stack, and returns true if that entity owns that wisp, and false otherwise."
+
+["wisp/move/target/set"]
+name = "Pathfinder's Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 5b, 0b, 4b, 0b, 5b, 4b, 0b], "start_dir": 4b}}'
+args = "vec →"
+description = "Removes a position vector from the stack; The Cyclic Wisp that executed this pattern will move in a straight line towards that position (colliding with terrain in its path) until it reaches it."
+
+["wisp/move/target/get"]
+name = "Pathfinder's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 2b, 0b, 1b, 0b, 2b, 1b, 0b], "start_dir": 1b}}'
+args = "→ vec"
+description = "Adds to the stack the position vector that the executing Cyclic Wisp is currently moving towards."
+
+["wisp/move/speed/set"]
+name = "Haste"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 1b, 4b, 0b, 5b, 5b, 5b, 4b, 1b], "start_dir": 4b}}'
+args = "num →"
+description = "Removes a number from the stack, and sets the executing Cyclic Wisp's maximum speed to that number."
+
+["wisp/move/speed/get"]
+name = "Speedometer's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 0b, 2b, 5b, 2b, 1b, 1b], "start_dir": 1b}}'
+args = "→ num"
+description = "Gets the executing Cyclic Wisp's current maximum speed."
+
+["wisp/transfer/allow"]
+name = "Allow Transfer"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 0b, 0b, 5b, 1b, 1b, 1b, 1b, 1b], "start_dir": 5b}}'
+args = "num →"
+description = "When two wisps are linked together, they transfer media between each other until they are balanced. By default this only happens between wisps with the same owner. This takes an index, and explicitly allows the wisp to exchange media with the linkable at that index."
+
+["wisp/transfer/disallow"]
+name = "Disallow Transfer"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 5b, 2b, 1b, 2b, 2b, 0b, 1b, 5b, 5b, 5b, 5b, 5b], "start_dir": 5b}}'
+args = "num →"
+description = "Correspondingly, this takes an index and disallows the wisp from exchanging media with the linkable at that index."
+
+["wisp/transfer/others/allow"]
+name = "Allow Transfer Others"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 0b, 0b, 1b, 5b, 5b, 5b, 5b, 5b], "start_dir": 3b}}'
+args = "wisp, num →"
+description = "This takes a wisp that you own and an index, and allows the wisp to exchange media with the linkable at that index."
+
+["wisp/transfer/others/disallow"]
+name = "Disallow Transfer Others"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 1b, 4b, 5b, 4b, 4b, 0b, 5b, 1b, 1b, 1b, 1b, 1b], "start_dir": 3b}}'
+args = "wisp, num →"
+description = "This takes a wisp that you own and an index, and disallows the wisp from exchanging media with the linkable at that index."
+
+["get_entity/wisp"]
+name = "Entity Purification: Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 0b, 2b, 1b, 2b, 0b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "vec → entity | null"
+description = "Transform the position on the stack into the wisp at that location (or Null if there isn't one)."
+
+["zone_entity/wisp"]
+name = "Zone Distillation: Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 0b, 2b, 1b, 2b, 0b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 0b], "start_dir": 2b}}'
+args = "vec, num → [entity]"
+description = "Take a position and maximum distance on the stack, and combine them into a list of wisps near the position."
+
+["zone_entity/not_wisp"]
+name = "Zone Distillation: Non-Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 0b, 4b, 5b, 4b, 0b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 0b], "start_dir": 0b}}'
+args = "vec, num → [entity]"
+description = "Take a position and maximum distance on the stack, and combine them into a list of non-wisp entities near the position."
+
+["wisp/trigger/tick"]
+name = "Delay Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 2b, 1b, 2b], "start_dir": 5b}}'
+args = "number →"
+description = "Removes an integer from the stack, then delays the wisp's next cast until at least that many twentieth's of a second have passed. This and other triggers like it will halve the wisp's upkeep cost while it isn't casting."
+
+["wisp/trigger/comm"]
+name = "Listen"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b], "start_dir": 1b}}'
+description = "The wisp's next cast will not occur until it has received at least one communication."
+
+["wisp/trigger/move"]
+name = "Wander"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 0b, 4b, 0b, 5b, 0b, 4b, 5b, 0b, 0b], "start_dir": 1b}}'
+description = "The wisp's next cast will not occur until it has reached the position it is navigating towards."
+
+["wisp/seon/get"]
+name = "Familiar's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b, 5b, 0b, 1b, 1b, 0b, 5b, 4b, 1b, 4b, 5b, 0b, 1b, 1b, 0b, 5b, 4b, 5b, 0b, 0b, 0b, 0b], "start_dir": 1b}}'
+args = "→ entity | null"
+description = "Returns my currently bound wisp. A new wisp can only be bound when this returns null. (This is not a great spell, I have simply placed it here for convenience.)"
+
+[link]
+name = "Link"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 4b, 4b, 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 1b, 4b, 5b, 4b, 4b, 0b], "start_dir": 1b}}'
+args = "linkable →"
+description = "Links the caster to the entity removed from the stack, which must be linkable. This costs one Amethyst Shard."
+
+["link/others"]
+name = "Link Others"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 5b, 1b, 1b, 1b, 1b, 1b, 2b, 0b, 0b], "start_dir": 1b}}'
+args = "linkable, linkable →"
+description = "May be evaluated by any casting instrument. Links two entities, which must be linkable. This costs one Amethyst Shard."
+
+["link/unlink"]
+name = "Unlink"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 1b, 2b, 2b, 5b, 1b, 1b, 1b, 1b, 1b, 2b, 0b, 5b, 2b, 1b, 2b, 2b, 0b], "start_dir": 4b}}'
+args = "num →"
+description = "Removes the link at the given index from the caster's links. This costs two Amethyst Dust."
+
+["link/unlink/others"]
+name = "Unlink Others"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 1b, 1b, 1b, 2b, 0b, 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b], "start_dir": 4b}}'
+args = "linkable, linkable →"
+description = "Takes two linkables and unlinks them if they are linked. This costs two Amethyst Dust."
+
+["link/get"]
+name = "Phonebook Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b], "start_dir": 1b}}'
+args = "num → linkable"
+description = "Removes an index from the stack, and adds the entity connected to the link at that index to the stack."
+
+["link/get_index"]
+name = "Recognition Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 2b], "start_dir": 3b}}'
+args = "linkable → num"
+description = "Removes an entity from the stack, and adds the index to the link to that entity to the stack (or -1 if the caster isn't linked to that entity)."
+
+["link/num"]
+name = "Popularity Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 1b, 1b, 1b, 2b, 0b, 0b], "start_dir": 4b}}'
+args = "→ num"
+description = "Adds the number of links to the wisp to the stack."
+
+["link/comm/send"]
+name = "Send Iota"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b], "start_dir": 5b}}'
+args = "num, any →"
+description = "Removes an iota from the stack, then removes an index from the stack and sends the iota along the link at the given index.  This costs one hundredth of an Amethyst Dust."
+
+["link/comm/read"]
+name = "Recitation Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 1b, 1b, 1b, 1b, 0b], "start_dir": 0b}}'
+args = "→ any"
+description = "When something receives an iota along a link it is added to a queue. This pattern adds the first iota in the queue to the stack, removing it from the queue."
+
+["link/comm/num"]
+name = "Postmaster's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 4b, 4b], "start_dir": 2b}}'
+args = "→ num"
+description = "Adds to the stack the number of unread iota in the caster's received iota queue."
+
+["link/comm/clear"]
+name = "Unclogging Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 4b], "start_dir": 2b}}'
+description = "Removes all unread iota from the caster's received iota queue."
+
+["link/comm/open_transmit"]
+name = "Open Transmit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 2b, 1b, 2b, 0b, 5b], "start_dir": 4b}}'
+args = "num →"
+description = "Similar to Introspection, until drawing a Close Transmit all patterns I draw are sent along the link whose index is at the top of the stack."
+
+["link/comm/close_transmit"]
+name = "Close Transmit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 4b, 5b, 4b, 0b, 1b], "start_dir": 1b}}'
+description = "When drawn after Open Transmit I stop transmitting drawn patterns. If either Open Transmit or Close Transmit are executed by an intermediary caster such as a wisp, they will mishap."
+
+["gate/mark"]
+name = "Gate's Opening"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 1b, 1b, 2b, 1b], "start_dir": 4b}}'
+args = "gate, entity →"
+description = "Consumes a gate iota and an entity. Marks that entity to be teleported the next time that gate is closed. Costs one twentieth of an Amethyst Dust."
+
+["gate/unmark"]
+name = "Gate's Dismissal"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 1b, 5b, 5b, 4b, 5b], "start_dir": 1b}}'
+args = "gate, entity →"
+description = "Consumes a gate iota and an entity. Unmarks that entity so that if it was marked with  Gate's Opening it will no longer be teleported the next time that gate is closed."
+
+["gate/mark/get"]
+name = "Marked Distillation"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 0b, 0b, 2b, 1b, 1b, 1b, 2b, 1b], "start_dir": 1b}}'
+args = "gate, entity → bool"
+description = "Consumes a gate iota and an entity, returns whether that entity is marked by that gate."
+
+["gate/mark/num/get"]
+name = "Marked Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 0b, 0b, 4b, 5b, 5b, 5b, 4b, 5b], "start_dir": 4b}}'
+args = "gate → num"
+description = "Consumes a gate iota, returns how many entities are marked by that gate."
+
+["gate/close"]
+name = "Gate's Closing"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 0b, 0b, 5b, 5b, 5b, 0b, 5b, 5b, 4b, 0b, 2b, 1b, 2b, 0b], "start_dir": 4b}}'
+args = "gate | gate, vec →"
+description = "Consumes a non-drifing gate iota, or a drifting gate iota and a position. Transports all the entities marked with the passed gate to the stored or given position, as relevant. Costs half an Amethyst Shard, plus an Amethyst Dust per metre transported per entity, if the gate was drifting."
+
+["mote/storage/bind"]
+name = "Bind Storage"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 5b, 4b, 5b, 0b, 5b, 4b, 5b], "start_dir": 5b}}'
+args = "vec →"
+description = "Target a Mote Nexus block in the world and bind yourself to it, meaning all items you mediafy will be added to that nexus' capacity. Targeting any other block will unbind you from your currently bound nexus. Costs 32 Amethyst Dust."
+
+["mote/storage/bind/temp"]
+name = "Bind Storage - Temporary"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 1b, 0b, 1b, 2b, 1b, 0b, 1b, 2b, 1b], "start_dir": 0b}}'
+args = "vec →"
+description = "Target a Mote Nexus block in the world and bind to it for the remainder of this cast, temporarily overriding your primary binding. Costs one thousandth of an Amethyst Dust."
+
+["mote/contained_type/get"]
+name = "Stocktake Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 5b, 5b, 5b, 5b, 5b, 0b, 2b, 2b, 0b, 0b], "start_dir": 0b}}'
+args = "→ [itemtype]"
+description = "Gets all the types of motes contained in the currently bound Mote Nexus."
+
+["mote/contained/get"]
+name = "Stocktake Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 4b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "mote | itemtype → [mote]"
+description = "Gets all the mote records from the currently bound Mote Nexus that match the passed item type or could be combined with the passed mote."
+
+["mote/storage/remaining_capacity/get"]
+name = "Capacity Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 2b, 5b, 2b, 1b, 0b, 4b], "start_dir": 2b}}'
+args = "→ int"
+description = "Gets the remaining capacity of the bound Mote Nexus."
+
+["mote/storage/contains"]
+name = "Containment Distillation"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 5b, 4b, 1b, 4b, 5b, 0b, 2b], "start_dir": 0b}}'
+args = "vec, (itemtype | mote) → bool"
+description = "Returns true if the Mote Nexus at the given position contains a mote of the given type, or that would stack with the given mote, and false otherwise."
+
+["mote/make"]
+name = "Mediafy Item"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 4b], "start_dir": 4b}}'
+args = "item | item, mote → mote"
+description = "Convert an item in the world (either an item entity or an item frame) into a mote on your stack. If passed an existing mote instead adds the items from the entity to the mote. Mediafying an item costs a tenth of an Amethyst Dust."
+
+["mote/return"]
+name = "Return Item"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 2b, 1b, 2b], "start_dir": 1b}}'
+args = "mote, vec | mote, vec, num →"
+description = "Returns all the items from a mote to the world at the location of your choosing. If passed a number returns at most that many items. Costs a tenth of an Amethyst Dust."
+
+["mote/count/get"]
+name = "Weighing Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 0b, 5b, 5b, 5b, 5b, 5b, 4b, 4b], "start_dir": 5b}}'
+args = "mote → int"
+description = "Accepts a mote and returns the number of items in the record referenced by that mote."
+
+["mote/combine"]
+name = "Stacking Distillation"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 1b, 5b, 2b, 1b, 2b], "start_dir": 5b}}'
+args = "mote, mote → mote"
+description = "Combines two motes into one, merging the mote records they point to. Any pointers to the second mote will become null, any pointers to the first will remain. This can make motes holding many more items than I could carry in a stack naturally!"
+
+["mote/combinable"]
+name = "Stacking Distillation II"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 5b, 1b, 4b, 5b, 4b], "start_dir": 3b}}'
+args = "mote, (mote | item) → bool"
+description = "Returns true if the first mote can be combined with the items in the second argument (which can be a mote, item entity, or item frame), and false otherwise."
+
+["mote/split"]
+name = "Splitting Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 4b, 4b, 0b], "start_dir": 1b}}'
+args = "mote, int → mote, mote"
+description = "Splits the specified number of items off of the passed mote, creating a new mote pointing to a new mote record."
+
+["mote/storage/get"]
+name = "Depot Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 0b], "start_dir": 3b}}'
+args = "mote → vec"
+description = "Get the position of the Mote Nexus that contains the passed mote."
+
+["mote/storage/set"]
+name = "Depot Gambit"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 2b, 0b], "start_dir": 2b}}'
+args = "mote, vec → mote"
+description = "Move the record referenced by the passed mote to the Mote Nexus at the passed position. This returns a new mote pointing to that record, and invalidates all previous motes pointing to that record."
+
+["mote/craft"]
+name = "Craft"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 0b, 2b, 1b, 2b, 0b, 4b, 0b, 2b, 1b, 0b, 0b, 2b, 0b, 4b, 5b, 4b, 0b, 2b, 0b, 0b, 1b, 2b, 0b, 4b, 0b, 2b, 1b, 2b, 0b, 4b, 0b, 0b], "start_dir": 2b}}'
+args = "mote | [mote] | [[mote]] → [mote]"
+description = "Takes a mote, list of motes, or list of list of motes. returns a list containing the results of crafting with those items. For example, the input Stone x128 would return [Stone Button x128]."
+
+["mote/villager/level/get"]
+name = "Seniority Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 0b, 2b, 1b, 2b, 0b, 5b, 5b, 4b, 0b, 0b], "start_dir": 5b}}'
+args = "villager → int"
+description = "Accepts a villager, returns a number representing that villager's seniority and skill at their craft."
+
+["mote/trade/get"]
+name = "Offering Purification"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 2b, 1b, 2b, 0b, 4b, 4b, 0b, 0b, 5b, 2b, 1b, 2b], "start_dir": 2b}}'
+args = "villager → [complicated!]"
+description = "Accepts a villager and returns all of the trades that villager is offering. This is a list of lists of lists. Each trade comprises two lists, the cost, and the returned items. The returned items is a list containing the type of item, and the number of items."
+
+["mote/trade"]
+name = "Trade"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 2b, 1b, 2b, 0b, 4b, 1b, 5b, 2b, 1b, 2b], "start_dir": 5b}}'
+args = "villager, [mote], int? → item"
+description = "Accepts a villager, a list of motes to trade with to villager, and optionally an int for which of that villager's trades to attempt. (int? above means that you can pass 2 or 3 arguments, the optional 3rd being an int)."
+
+["mote/use_on"]
+name = "Use Item On"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 0b, 5b, 5b, 5b, 5b, 4b, 4b], "start_dir": 1b}}'
+args = "mote, (entity | vec, vec) →"
+description = "Accepts a mote, and either an entity, or a target block and a normal vector. Uses the item on the entity/block. The mote must either only have one item in it, or the items contained must be extremely simple (no NBT data)."
+
+["wisp/consume"]
+name = "Consume Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 5b, 0b, 4b, 0b, 0b, 0b, 1b, 0b, 0b, 0b, 1b, 0b, 0b, 0b, 4b, 0b, 5b, 0b, 4b, 0b, 0b, 0b, 1b, 0b, 0b, 0b, 1b, 0b, 2b, 1b, 4b, 0b, 1b, 1b, 0b, 4b, 5b, 4b, 0b, 1b, 1b, 0b, 4b, 4b, 0b, 0b, 0b, 0b], "start_dir": 5b}}'
+args = "entity →"
+description = "Remove a wisp from the stack, and disassemble the wisp. The patterns contained are lost, but the media that it contained can be repurposed if this spell is cast by another wisp."
+
+["wisp/seon/set"]
+name = "Bind Wisp"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 0b, 1b, 1b, 0b, 5b, 4b, 1b, 4b, 5b, 0b, 1b, 1b, 0b, 5b, 4b, 5b, 0b, 0b, 0b], "start_dir": 3b}}'
+args = "entity →"
+description = "Bind one of my wisps closer to me; I may only have one bound wisp at a time, but whichever wisp is bound costs significantly less upkeep and increased range."
+
+[tick]
+name = "Accelerate"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 0b, 2b, 0b, 2b, 0b, 0b, 0b, 4b, 0b, 5b, 5b, 1b, 5b, 0b, 5b, 5b, 0b, 5b, 1b, 5b, 0b, 5b, 5b], "start_dir": 2b}}'
+args = "vec →"
+description = "Causes the block at the passed vector to perform its normal actions faster in the instant that this spell is cast."
+
+["gate/make"]
+name = "Gate's Reflection"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 5b, 1b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 1b], "start_dir": 4b}}'
+args = "null | vec | vec, entity → gate"
+description = "Adds a new gate iota to the stack. Any copy of this iota will point to the same numbered gate. Costs 32 Charged Amethyst. If passed null, makes a Drifting Gate. If passed a vector, makes a Location Anchored Gate, If passed a vector and an entity, makes an Entity Anchored Gate."
+
+["interop/fabric_only/phase_block"]
+name = "Phase Block"
+modid = "hexal"
+modName = "Hexal"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b, 5b, 5b, 5b, 4b], "start_dir": 4b}}'
+args = "vec, num →"
+description = "Takes a position and a number, and phases the block at that position out for that many seconds. Costs one ten-thousandth of an Amethyst Dust times the square of the time to phase out for."

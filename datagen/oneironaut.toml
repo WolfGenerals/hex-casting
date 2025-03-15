@@ -1,0 +1,268 @@
+[getdim1]
+name = "Spatial Reflection"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 4b, 1b, 5b, 5b, 1b], "start_dir": 4b}}'
+args = "→ Imprint"
+description = "Returns a Spatial Imprint representing the dimension I am currently in. Costs a negligible amount of media."
+
+[getdim2]
+name = "Spatial Reflection II"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 4b, 5b, 1b, 1b, 5b], "start_dir": 4b}}'
+args = "→ Imprint | NULL"
+description = "Returns a Spatial Imprint representing the dimension my sentinel is currently in. Costs a slightly-less-negligible amount of media."
+
+[getrodlook]
+name = "Baton Reflection"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 0b, 4b], "start_dir": 2b}}'
+args = "→ vector"
+description = "When cast with a Reverberation Rod, returns my look vector from when I started the current cast loop."
+
+[getrodpos]
+name = "Baton Reflection II"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 0b, 4b, 4b], "start_dir": 2b}}'
+args = "→ vector"
+description = "When cast with a Reverberation Rod, returns my eye position from when I started the current cast loop."
+
+[getrodstamp]
+name = "Metronome Reflection"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 0b, 4b, 4b, 0b], "start_dir": 2b}}'
+args = "→ number"
+description = "When cast with a Reverberation Rod, returns the timestamp from when I started the current cast loop."
+
+[readframerotation]
+name = "Decorator's Purification"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 0b, 0b, 5b, 0b, 0b, 4b, 0b, 0b, 4b, 1b, 4b, 1b], "start_dir": 3b}}'
+args = "item frame → number"
+description = "Accepts an item frame entity, and returns its rotation, from 0 to 7."
+
+[readidea]
+name = "Retrieve Idea"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 5b, 5b, 0b, 1b, 2b, 1b, 0b, 5b], "start_dir": 4b}}'
+args = "key → any"
+description = "Accepts a valid key, and returns the corresponding iota. Costs about 1 amethyst dust."
+
+[readideatime]
+name = "Metadata Purification"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 5b, 5b, 1b, 5b, 4b, 5b, 1b, 5b], "start_dir": 4b}}'
+args = "key → number | NULL"
+description = "Accepts a valid key, and returns when the corresponding iota was inscribed, or NULL. Costs a negligible amount of media."
+
+[readideawriter]
+name = "Metadata Distillation"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 4b, 1b, 5b, 1b, 2b, 1b, 5b, 1b], "start_dir": 4b}}'
+args = "key, player → bool"
+description = "Accepts a valid key and a player, and returns whether the corresponding iota was inscribed by that player. Costs a negligible amount of media."
+
+[readsentinel]
+name = "Scrutinize Sentinel"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 0b, 4b, 1b, 2b, 2b, 0b, 0b, 2b], "start_dir": 1b}}'
+args = "vec, player → num | NULL"
+description = "Accepts a vector and a player, and returns either the distance from the vector to the target player's sentinel or NULL. Costs a negligible amount of media."
+
+[detectshroud]
+name = "Discern Shroud"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 0b, 4b, 4b, 0b, 1b, 0b, 4b, 4b, 0b, 2b, 0b, 0b], "start_dir": 2b}}'
+args = "vector, number → [vector]"
+description = "Accepts a vector and a number, and returns a list of unit vectors pointing from the initial vector to shrouded entities within a radius defined by the number."
+
+[getstatus]
+name = "Apothecary's Prfn."
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 2b, 0b, 2b], "start_dir": 3b}}'
+args = "entity → [status]"
+description = "Accepts a living entity, and returns a list status iotas representing all effects on the target."
+
+[getstatuscategory]
+name = "Apothecary's Prfn. II"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 4b, 0b, 4b], "start_dir": 2b}}'
+args = "status → num"
+description = "Accepts a status effect type, and returns a number based on whether the effect is likely to be helpful, harmful, or neutral to a creature."
+
+[getstatusduration]
+name = "Pharmacist's Dstln."
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 2b, 0b, 2b, 0b, 2b], "start_dir": 3b}}'
+args = "entity, status → num"
+description = "Accepts an entity and a status effect type, and returns the effect on the target's duration in seconds."
+
+[getstatuslevel]
+name = "Pharmacist's Dstln. II"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 5b, 4b, 0b, 4b, 0b, 4b], "start_dir": 2b}}'
+args = "entity, status → num"
+description = "Accepts an entity and a status effect type, and returns the effect on the target's potency."
+
+[getbystatus]
+name = "Zone Exltn.: Status"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 5b, 5b, 5b, 5b, 5b, 0b, 1b], "start_dir": 1b}}'
+args = "status, vec, num → [entity]"
+description = "Accepts a status effect type, a vector, and a number (n), and returns a list of entities within radius n of the vector which have that effect."
+
+[getbystatusinverse]
+name = "Zone Exltn.: Not-Status"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 5b], "start_dir": 1b}}'
+args = "status, vec, num → [entity]"
+description = "Accepts a status effect type, a vector, and a number (n), and returns a list of entities within radius n of the vector which do not have that effect."
+
+[getbystatussingle]
+name = "Entity Distillation: Status"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 1b, 1b, 1b, 1b, 1b, 4b, 1b], "start_dir": 1b}}'
+args = "status, vector → entity | NULL"
+description = "Accepts a status effect type and a vector, and returns an entity at that position which has that effect."
+
+[paintconjured]
+name = "Externalize Pigment"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 2b, 0b, 1b, 1b, 5b, 2b, 0b, 0b, 1b, 1b, 5b, 2b, 2b, 5b, 2b, 0b, 0b, 0b, 2b, 1b, 0b, 0b], "start_dir": 4b}}'
+args = "Vector, itemtype →"
+description = "Accepts a vector and an itemtype representing a pigment. Costs a negligible amount of media if targeting my own block, or 1 Amethyst Dust if not."
+
+[particleburst]
+name = "Particle Burst"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 0b, 4b, 4b, 2b, 2b, 0b, 5b, 5b, 5b, 5b, 4b], "start_dir": 1b}}'
+args = "vec, vec, num, num →"
+description = "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media."
+
+[setframerotation]
+name = "Decorator's Gambit"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 0b, 0b, 5b, 0b, 0b, 4b, 0b, 0b, 4b, 5b, 2b, 5b], "start_dir": 3b}}'
+args = "item frame, number →"
+description = "Accepts an item frame entity and an integer from 0 to 7, and sets its rotation to the number. Costs a negligible amount of media."
+
+[delayrod]
+name = "Metronome Gambit"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 5b, 5b, 5b, 0b, 5b, 4b, 5b, 2b, 2b, 5b], "start_dir": 2b}}'
+args = "number →"
+description = "Accepts a positive integer. When cast with a Reverberation Rod, delays the current cast loop's next cast until that many twentieths of a second have passed."
+
+[haltrod]
+name = "Finale"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 2b, 1b, 1b, 0b, 1b, 1b, 1b, 0b], "start_dir": 3b}}'
+description = "When cast with a Reverberation Rod, forcibly halts the current cast loop."
+
+[resetrod]
+name = "Encore"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 4b, 5b, 5b, 0b, 5b, 5b, 5b, 0b], "start_dir": 2b}}'
+args = "number →"
+description = "Accepts a positive integer. Halts the current cast loop but also reduces the cooldown period from 1 second to ((1/20) * number) seconds. Cooldown due to mishap is unaffected."
+
+[writeidea]
+name = "Inscribe Idea"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 1b, 1b, 0b, 5b, 4b, 5b, 0b, 1b], "start_dir": 1b}}'
+args = "key, any →"
+description = "Accepts a valid key and any iota, and stores it in the corresponding location. Costs about 1 amethyst dust."
+
+[circle]
+name = "Circle"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 0b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 0b, 0b, 0b], "start_dir": 2b}}'
+
+[removestatus]
+name = "Cleanse Status"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 2b, 4b, 5b, 2b, 1b, 0b, 1b, 2b], "start_dir": 3b}}'
+args = "entity, status →"
+description = "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration."
+
+[craftrod]
+name = "Conduct Rod"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 1b, 5b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 2b, 1b, 5b, 1b, 0b, 0b, 0b, 0b, 0b, 1b, 5b, 1b, 1b, 1b, 5b, 1b, 0b, 0b, 0b, 0b, 0b, 1b, 5b, 1b], "start_dir": 1b}}'
+args = "entity, list of patterns →"
+description = "Acts just like the spells used to program conventional casting items. Costs 10 Charged Amethyst."
+
+[dimteleport]
+name = "Noetic Gateway"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 0b, 0b, 0b, 0b, 1b, 1b, 5b, 1b, 5b, 1b, 1b, 0b, 0b, 0b, 0b, 1b, 1b, 5b, 2b, 5b, 5b, 2b, 0b, 0b, 0b, 2b, 5b, 1b, 5b, 2b, 0b, 0b, 0b, 2b, 5b, 2b, 4b, 2b, 0b, 0b, 2b, 5b, 2b, 0b, 0b, 2b, 2b, 4b, 2b, 4b, 5b, 4b, 2b, 4b, 4b, 0b, 0b, 0b], "start_dir": 0b}}'
+args = "Entity, Imprint →"
+description = "Accepts an entity and a Spatial Imprint and teleports the entity to its position in the corresponding dimension. Costs 20 Charged Amethyst."
+
+[infusemedia]
+name = "Media Infusion"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 5b, 5b, 5b, 0b, 0b, 0b, 5b, 5b, 1b, 5b, 5b, 0b, 0b, 0b, 5b, 5b, 0b, 1b, 5b, 4b, 2b, 4b, 2b, 4b, 2b, 4b, 5b, 1b, 5b, 1b, 5b, 4b, 2b, 4b, 2b, 4b, 2b, 4b, 5b, 1b], "start_dir": 1b}}'
+args = "Vector →"
+description = "Accepts a vector and infuses media into the corresponding block in order to transmute it. Cost and exact effect vary depending on target."
+
+[swapspace]
+name = "Spatial Interchange"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 5b, 0b, 0b, 0b, 0b, 0b, 5b, 5b, 5b, 0b, 0b, 0b, 5b, 2b, 4b, 5b, 4b, 2b, 0b, 5b, 5b, 0b, 2b, 4b, 5b, 4b, 2b, 0b, 1b, 5b, 1b, 5b, 5b, 5b, 5b, 1b, 5b, 1b, 5b, 4b, 5b, 1b, 5b, 1b, 2b, 1b, 5b, 1b, 5b, 4b], "start_dir": 1b}}'
+args = "[vec, vec], [vec, vec], Imprint →"
+description = "Accepts two lists of two vectors, to define two cuboids, and a Spatial Imprint. These cuboids must have the exact same dimensions and rotation."
+
+[resistdetection]
+name = "Stealth Shroud"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 0b, 0b, 2b, 0b, 2b, 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b], "start_dir": 1b}}'
+args = "entity, number →"
+description = "Accepts a living entity and a number (n), and shields the entity from hex-based detection for n seconds. Costs two amethyst dust per second."
+
+[invisibility]
+name = "Hidden Sun's Zenith"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 1b, 0b, 4b, 0b, 4b, 0b, 1b, 5b, 4b], "start_dir": 3b}}'
+args = "entity, number →"
+description = "I've also discovered a spell which applies normal Invisibility. Functions just like the normal Zeniths, and costs one amethyst dust per three seconds."
+
+[applymindrender]
+name = "Empower Mind Render"
+modid = "oneironaut"
+modName = "Oneironaut"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 1b, 5b, 4b, 2b, 1b, 5b, 4b, 2b, 1b, 5b, 4b, 2b, 5b, 5b, 5b, 0b, 2b, 4b, 5b, 1b, 2b, 4b, 5b, 1b, 2b, 4b, 5b, 1b, 5b, 4b, 5b, 2b, 0b, 4b, 0b, 2b, 0b, 4b, 0b, 2b, 0b, 4b, 5b, 4b, 0b, 2b, 0b, 4b, 0b, 2b, 0b, 4b, 0b, 2b, 2b, 0b, 0b, 0b, 0b, 0b, 5b, 2b, 1b, 2b, 2b, 0b], "start_dir": 1b}}'
+args = "entity →"
+description = "Accepts an item or item frame bearing the Sharpness enchantment, and converts it into Mind Render of the same level. Cost is based on enchantment level, and increases by 50% if the item is a book."

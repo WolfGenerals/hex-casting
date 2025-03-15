@@ -1,0 +1,29 @@
+[library]
+name = "Library Key"
+modid = "hexkeys"
+modName = "Hex Keys"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 0b, 0b, 2b, 2b, 4b, 2b, 4b], "start_dir": 5b}}'
+description = "It started with a crack... A small thing really. I felt a light breeze from it that told me things. I'm now certain that every mind has some form of physical representation. I just need to get there. If only I could push that crack wider..."
+
+[visit_library]
+name = "Visitor's Key"
+modid = "hexkeys"
+modName = "Hex Keys"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 0b, 0b, 2b, 2b, 4b, 2b, 4b], "start_dir": 1b}}'
+args = "Library Key →"
+description = 'I should also keep in mind that this method only seems to work on those like myself. Those of us who have "opened" our minds to the realm around us.'
+
+[create_library_key]
+name = "Morpheus's Reflection"
+modid = "hexkeys"
+modName = "Hex Keys"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 2b, 0b, 1b, 0b, 2b, 1b, 1b, 0b, 2b, 0b, 1b, 0b, 2b, 1b, 0b, 1b, 0b, 2b, 0b, 1b], "start_dir": 4b}}'
+args = "→ Library Key"
+description = ""
+
+[kleins_chest]
+name = "Klein's Chest"
+modid = "hexkeys"
+modName = "Hex Keys"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 0b, 4b, 1b, 4b, 0b, 5b, 4b, 0b, 0b, 4b, 0b, 5b, 5b], "start_dir": 2b}}'
+description = "The cost of using this mental storage is an amethyst shard plus a quarter of an amethyst dust per slot filled. It takes a surprisingly large amount of mental energy to recall things that shouldn't be there in the first place."

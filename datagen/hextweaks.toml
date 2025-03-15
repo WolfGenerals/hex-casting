@@ -1,0 +1,132 @@
+["page/right"]
+name = "Progress Gambit"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 0b], "start_dir": 3b}}'
+description = "Turns the spellbook that your are holding one page to the right"
+
+["page/left"]
+name = "Regress Gambit"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 2b, 0b], "start_dir": 2b}}'
+description = "Turns the spellbook that your are holding one page to the left"
+
+[nausea]
+name = "Nadir of Nausea"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 1b, 2b], "start_dir": 1b}}'
+args = "entity, number, number →"
+description = "Inflicts nausea. Base cost is one Amethyst Dust per 4 seconds."
+
+["dict/new"]
+name = "Clerk's Vacant Reflection"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b], "start_dir": 0b}}'
+args = "→ dict"
+description = "Pushes a new empty dictionary to the stack"
+
+["dict/from"]
+name = "Clerk's Distillation"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 1b, 5b, 2b, 0b, 1b, 1b, 1b, 0b], "start_dir": 0b}}'
+args = "[key],[any] → dict"
+description = "Turns two list into a dictionary, same rules apply (invalid keys get their values dropped)"
+
+["dict/break"]
+name = "Clerk's Decomposition"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 2b, 0b, 5b, 5b, 5b, 0b, 4b, 1b], "start_dir": 0b}}'
+args = "dict → [key],[any]"
+description = "Breaks a dictionary into list of keys and values"
+
+["dict/break/single"]
+name = "Clerk's Decomposition II"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 2b, 0b, 5b, 5b, 5b, 0b, 5b], "start_dir": 0b}}'
+args = "dict → key,value"
+description = "Breaks only the first value (and drops the others)"
+
+["dict/thoths"]
+name = "Clerk's Thoths Gambit"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 1b, 2b, 4b, 2b, 4b, 2b], "start_dir": 0b}}'
+args = "[patterns],dict → [any]"
+description = "Thoths, but dictionary, pushes key,value to the top of the stack instead of a single value (value highest)"
+
+["dict/size"]
+name = "Clerk's Abacus Purification"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 1b, 1b, 0b, 4b, 5b, 4b, 1b, 4b, 5b], "start_dir": 0b}}'
+args = "dict → num"
+description = "consumes a dictionary and return it's size (cannot be more then 32 (default)"
+
+["dict/set"]
+name = "Clerk's Integration Exaltation"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 2b, 5b, 1b, 2b, 5b, 2b, 1b], "start_dir": 0b}}'
+args = "dict, key, any → dict"
+description = "Adds the key/value pair to the dictionary (dictionary remains on stack)"
+
+["dict/get"]
+name = "Clerk's Surgeon's Exaltation"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 2b, 4b, 2b, 1b, 1b, 1b, 2b], "start_dir": 0b}}'
+args = "dict, key → dict, any"
+description = "Gets the value from the dictionary using key (dictionary remains on stack)"
+
+["dict/remove"]
+name = "Clerk's Excisor's Distillation"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 0b, 4b, 5b, 1b, 5b, 2b, 2b], "start_dir": 0b}}'
+args = "dict, key → dict"
+description = "Removes a key from the dictionary (dictionary remains on stack)"
+
+[itter]
+name = "Iterators Purification"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 2b, 0b, 4b, 0b], "start_dir": 0b}}'
+args = "Number → [Number]"
+description = "Takes a number and returns all number 0 to n-1 (produces n values)"
+
+["craft/grandscroll"]
+name = "Natural Search"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 1b, 0b, 4b, 0b, 5b, 0b, 5b, 1b, 2b, 4b, 0b, 2b, 0b, 1b, 1b, 0b, 4b, 1b, 5b, 0b, 4b, 0b, 2b, 4b, 5b, 0b, 2b, 1b, 0b, 4b, 0b, 2b, 4b, 2b, 0b, 4b, 0b, 5b, 0b, 4b, 0b, 2b, 4b, 2b, 0b, 4b, 0b], "start_dir": 4b}}'
+args = "Entity, Vec →"
+description = "Takes a Ancient Scroll and a Budding amethyst and searches for a random Grand spell"
+
+[suicide]
+name = "Suspicious Glyph"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 0b, 2b, 1b, 5b, 0b, 0b, 1b, 2b, 4b, 5b, 1b, 2b, 0b, 4b, 2b, 0b, 1b, 5b, 1b, 0b, 0b, 2b], "start_dir": 4b}}'
+description = "It appears to be a pattern, I wonder what happens if I cast it"
+
+["grand/reroll"]
+name = "Reroll Pattern"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 5b, 5b, 0b, 0b, 4b, 0b, 0b, 5b, 5b, 1b, 4b, 2b, 2b, 0b, 0b, 2b, 2b, 4b, 3b], "start_dir": 0b}}'
+args = "Entity →"
+description = "takes a Entity (Ancient/Crystallized scroll) and changes the pattern upon it the cost increasing exponentially with the each cast"
+
+["grand/massbrainsweep"]
+name = "Mass Mindflay"
+modid = "hextweaks"
+modName = "HexTweaks"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 1b, 5b, 4b, 1b, 5b, 1b, 4b, 5b, 1b, 5b, 4b, 1b, 5b, 4b, 5b, 2b, 1b, 2b, 1b, 2b, 0b, 4b, 5b, 2b, 1b, 2b, 3b, 2b, 1b], "start_dir": 0b}}'
+args = "[Entity], any →"
+description = "sacrifices some mobs and performs a ritual using them I cannot cast this by handI have some notes on this"
