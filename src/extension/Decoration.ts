@@ -1,5 +1,5 @@
-import vscode, {Range, TextDocument, TextEditor, Uri} from "vscode"
-import {checkFileExists, collectPatterns, collectSymbols, parseAST} from "./util"
+import vscode, { Range, TextDocument, TextEditor, Uri } from "vscode";
+import { checkFileExists, collectPatterns, collectSymbols, parseAST } from "./util";
 import {iotaWalk, PegDefineFunction, PegDefineIota, PegIota, PegReference} from "../compile/peggy/PegTypes"
 import {PatternDefine, PatternManager} from "../compile/PatternLoader"
 import {PatternIota} from "../compile/Iota"

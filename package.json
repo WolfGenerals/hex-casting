@@ -2,13 +2,13 @@
   "name": "hexcasting",
   "displayName": "Hex Casting Compiler",
   "description": "",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/WolfGenerals/hex-casting.git"
   },
   "publisher": "WolfGenerals",
-  "icon": "src/resources/icons/hex casting dark.png",
+  "icon": "resources/icons/hex casting dark.png",
   "engines": {
     "vscode": "^1.98.0"
   },
@@ -26,8 +26,8 @@
         "title": "Build",
         "category": "Hex Casting",
         "icon": {
-          "dark": "src/resources/icons/hex casting dark.svg",
-          "light": "src/resources/icons/hex casting light.svg"
+          "dark": "resources/icons/hex casting dark.svg",
+          "light": "resources/icons/hex casting light.svg"
         }
       }
     ],
@@ -42,17 +42,17 @@
           ".hc"
         ],
         "icon": {
-          "dark": "src/resources/icons/hex casting dark.svg",
-          "light": "src/resources/icons/hex casting light.svg"
+          "dark": "resources/icons/hex casting dark.svg",
+          "light": "resources/icons/hex casting light.svg"
         },
-        "configuration": "./src/resources/config/language-configuration.json"
+        "configuration": "resources/config/language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "hexcasting",
         "scopeName": "source.hexcasting",
-        "path": "./src/resources/config/hexcasting.tmLanguage.json"
+        "path": "resources/config/hexcasting.tmLanguage.json"
       }
     ],
     "menus": {
