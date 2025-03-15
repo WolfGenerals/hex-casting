@@ -1,12 +1,14 @@
 {
   "name": "hexcasting",
-  "displayName": "Hex Casting",
+  "displayName": "Hex Casting Compiler",
   "description": "",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/WolfGenerals/hex-casting.git"
   },
+  "publisher": "WolfGenerals",
+  "icon": "src/resources/icons/hex casting dark.png",
   "engines": {
     "vscode": "^1.98.0"
   },
@@ -23,7 +25,10 @@
         "command": "hexcasting.build",
         "title": "Build",
         "category": "Hex Casting",
-        "icon": "src/resources/icons/hex casting.svg"
+        "icon": {
+          "dark": "src/resources/icons/hex casting dark.svg",
+          "light": "src/resources/icons/hex casting light.svg"
+        }
       }
     ],
     "languages": [
@@ -37,8 +42,8 @@
           ".hc"
         ],
         "icon": {
-          "dark": "src/resources/icons/hex casting.svg",
-          "light": "src/resources/icons/hex casting.svg"
+          "dark": "src/resources/icons/hex casting dark.svg",
+          "light": "src/resources/icons/hex casting light.svg"
         },
         "configuration": "./src/resources/config/language-configuration.json"
       }
@@ -62,6 +67,9 @@
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
     "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
     "lint": "eslint src",

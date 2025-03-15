@@ -113,7 +113,7 @@ export class Tag {
                     else if (num <= 2n ** 63n - 1n && num >= -(2n ** 63n))
                         return new Tag(keys[0], new LongPayload(BigInt(num)), root);
                 }
-                if (new Float32Array([number])[0] == num) // 能安全转为float
+                if (new Float32Array([number])[0] === num) // 能安全转为float
                     return new Tag(keys[0], new FloatPayload(number), root);
                 else // 否则double
                     return new Tag(keys[0], new DoublePayload(Number(number)), root);
