@@ -18,7 +18,7 @@ DefineFunction
   { return { type:"define_func", id:id, body:body, loc:location() }; }
 
 FunctionBody
-  = "{" __ statements:Statement|.., NEWLINE | __ "}"
+  = "{" __ statements:Statement|.., __ | __ "}"
   { return { type:"function_body", statements:statements, loc:location() }; }
 
 

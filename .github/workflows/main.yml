@@ -40,6 +40,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Publish to VS Code Marketplace
-#        run: npx vsce publish -p ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
-#        if: success()
+      - name: Publish to VS Code Marketplace
+        run: npx vsce publish -p ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
+        if: success()

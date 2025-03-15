@@ -9,7 +9,7 @@ export class PatternManager {
     private getOrCreate(id: string): PatternDefine {
         let p = this.patterns.get(id)
         if (p) return p
-        p=new PatternDefine(id, id)
+        p = new PatternDefine(id, id)
         this.patterns.set(id, p)
         return p
     }
@@ -25,7 +25,7 @@ export class PatternManager {
         const args = tomlPattern.args || original.args
         const description = tomlPattern.description || original.description
 
-        if (name ==='patterns'){
+        if (name === 'patterns') {
             console.log(tomlPattern)
         }
 
@@ -44,21 +44,26 @@ export class PatternManager {
     search(query: string): PatternDefine[] {
         const fuse = new Fuse(Object.values(this.patterns), {
             // keys: ['id', 'name', 'modName', 'description'],
-            keys:[
-                {name: 'id',weight: 2},
-                {name: 'name',weight: 1},
+            keys: [
+                {name: 'id', weight: 2},
+                {name: 'name', weight: 1},
             ],
             threshold: 0.4,
         })
         return fuse.search(query).map(result => result.item)
     }
 
-    get(id: string){
+    get(id: string) {
         return this.patterns.get(id)
+    }
+
+    getAll(): PatternDefine[] {
+        return Array.from(this.patterns.values())
     }
 }
 
 export class PatternDefine {
+    private _svgs: Map<number, string>  = new Map()
     constructor(
         public readonly id: string,
         public readonly name: string,
@@ -68,6 +73,15 @@ export class PatternDefine {
         public readonly args?: string,
         public readonly description?: string,
     ) {
+    }
+
+    svg(px:number): string | undefined {
+        if (!this.patternIota) return undefined
+        const _svg = this._svgs.get(px)
+        if (_svg) return _svg
+        const newSvg = this.patternIota.svg(px)
+        this._svgs.set(px, newSvg)
+        return newSvg
     }
 }
 

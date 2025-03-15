@@ -1,7 +1,7 @@
 import {parse} from "./HexCasting"
 
 export function peggyParse(input: string): PegTopLevel[] {
-    return parse(input);
+    return parse(input)
 }
 
 export type PegTopLevel =
@@ -27,6 +27,7 @@ export interface PegUsePattern {
     readonly filePath: string;
     readonly loc: Location;
 }
+
 export interface PegDefineIota {
     readonly type: "define_iota";
     readonly id: PegIdentifier;
@@ -146,4 +147,10 @@ export interface PegExternalIota {
     readonly type: "external";
     readonly data: string;
     readonly loc: Location;
+}
+
+export function iotaWalk(iota: PegIota | PegReference, callback: (item: PegIota | PegReference) => void) {
+    callback(iota)
+    if (iota.type === "list")
+        iota.data.forEach(item => iotaWalk(item, callback))
 }

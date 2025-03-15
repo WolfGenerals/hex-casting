@@ -211,7 +211,7 @@ export class ListIota implements Iota {
         return new ListIota(
             list
                 .map(tag => {
-                    if (tag.getTagId()!== TagId.COMPOUND)
+                    if (tag.getTagId() !== TagId.COMPOUND)
                         throw new Error(`Invalid list iota: ${tag.toSNBTValue('formated')} is not a element, in ${nbt.toSNBTValue('formated')}`)
                     return tag as CompoundPayload
                 })
@@ -255,7 +255,7 @@ export class Vec3Iota implements Iota {
 
         if (type !== VEC3_TYPE)
             throw new Error(`Invalid vec3 iota: ${HEX_TYPE} is not ${VEC3_TYPE}, in ${nbt.toSNBTValue('formated')}`)
-        if (dataPayload.getTagId()!== TagId.COMPOUND)
+        if (dataPayload.getTagId() !== TagId.COMPOUND)
             throw new Error(`Invalid vec3 iota: ${HEX_DATA} is not a compound, in ${nbt.toSNBTValue('formated')}`)
         const vec3 = dataPayload as CompoundPayload
 
@@ -275,7 +275,7 @@ export class Vec3Iota implements Iota {
         if (
             !xPayload || !yPayload || !zPayload
             || !(
-                   xPayload.getTagId() === TagId.DOUBLE
+                xPayload.getTagId() === TagId.DOUBLE
                 && yPayload.getTagId() === TagId.DOUBLE
                 && zPayload.getTagId() === TagId.DOUBLE
             )
@@ -318,7 +318,7 @@ export class PatternIota implements Iota {
         ])
     }
 
-    static fromAngles(signature: string, startDir: string): PatternIota {
+    static fromAngles(signature: string, startDir: string = 'EAST'): PatternIota {
         const mappingSig: Record<string, BytePayload> = {
             w: new BytePayload(0),
             e: new BytePayload(1),
@@ -353,7 +353,7 @@ export class PatternIota implements Iota {
 
         if (type !== PATTERN_TYPE)
             throw new Error(`Invalid pattern iota: ${HEX_TYPE} is not ${PATTERN_TYPE}, in ${nbt.toSNBTValue('formated')}`)
-        if (dataPayload.getTagId()!== TagId.COMPOUND)
+        if (dataPayload.getTagId() !== TagId.COMPOUND)
             throw new Error(`Invalid pattern iota: ${HEX_DATA} is not a compound, in ${nbt.toSNBTValue('formated')}`)
         const pattern = dataPayload as CompoundPayload
 
@@ -379,6 +379,72 @@ export class PatternIota implements Iota {
             anglesPayload.getValue(),
             startDirPayload as BytePayload,
         )
+    }
+
+    svg(px: number) {
+        let small = px < 32
+        let distance = px /32
+        if (small) distance = 4
+        let xMin = 0
+        let yMin = 0
+        let xMax = 0
+        let yMax = 0
+        const lines: string[] = []
+        let circle: string[] = []
+
+        let color = (p:number) => `hsl(240 ${100 - 50 * p} ${80 - 40 * p})`
+        let nodeColor =  "hsl(0 0 100)"
+        if (small){
+            color = (p:number) => "hsl(240 100 66)"
+            nodeColor = "hsl(240 100 66)"
+        }
+        const getMove = (angle: number) => {
+            const rad = angle * 60 * Math.PI / 180
+            return {x: Math.cos(rad) * distance, y: Math.sin(rad) * distance}
+        }
+        const draw = (x1: number, y1: number, x2: number, y2: number, percent: number) => {
+            const r = 1
+            if (!small)
+                lines.push(`<circle cx="${x1}" cy="${y1}" r="${r}" fill="${color(percent)}" />`)
+            lines.push(`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color(percent)}" />`)
+            // lines.push(`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="hsl(0 0 0)" stroke-width="1.4" />`)
+            circle.push(`<circle cx="${x1}" cy="${y1}" r=".5" fill="${nodeColor}" />`)
+        }
+
+        const {angles, start_dir} = this
+        let last = {x: 0, y: 0}
+        let current = {x: 0, y: 0}
+        let lastAngle: number = -1
+        let currentAngle: number
+        let move
+
+        for (const [i, angle] of [start_dir, ...angles].entries()) {
+            currentAngle = lastAngle + angle.getValue()
+            move = getMove(currentAngle)
+            current = {x: last.x + move.x, y: last.y + move.y}
+
+            draw(last.x, last.y, current.x, current.y, i / angles.length)
+
+            last = current
+            lastAngle = currentAngle
+            if (current.x < xMin) xMin = current.x
+            if (current.x > xMax) xMax = current.x
+            if (current.y < yMin) yMin = current.y
+            if (current.y > yMax) yMax = current.y
+        }
+        if (!small)
+            lines.push(`<circle cx="${current.x}" cy="${current.y}" r="1" fill="${color(1)}" />`)
+        circle.push(`<circle cx="${current.x}" cy="${current.y}" r=".5" fill="${nodeColor}" />`)
+
+
+        return `<svg 
+xmlns="http://www.w3.org/2000/svg" 
+viewBox="${xMin - 1} ${yMin - 1} ${xMax - xMin + 2} ${yMax - yMin + 2}"
+${((xMax - xMin) > (yMax - yMin)) && !small ? 'width="' + px + 'px"' : 'height="' + px + 'px"'}
+>
+            ${lines.reverse().join('\n')}
+            ${circle.join('\n')}
+        </svg>`
     }
 }
 

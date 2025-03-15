@@ -71,7 +71,7 @@ export class CompileScope {
             case "garbage":
                 return new GarbageIota()
             case "raw":
-                return PatternIota.fromAngles(src.data, 'EAST')
+                return PatternIota.fromAngles(src.data)
             case "list":
                 return new ListIota(
                     src.data

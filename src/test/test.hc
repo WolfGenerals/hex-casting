@@ -15,11 +15,11 @@ iota external1 = <minecraft:pig>
 iota complexList = [vec<0,0,0>,<west>, `aqswde`]
 
 // ========== 函数定义测试 ==========
-func emptyFunc = {
+func emptyFunc  {
     // =这是一个空函数
 }
 
-func basicOperations = {
+func basicOperations  {
     #mask _**_***
     &$number1
     $vec1
@@ -28,14 +28,14 @@ func basicOperations = {
     <add>
 }
 
-func nestedFunctions = {
+func nestedFunctions  {
     [
         $list1,
         vec<1,2,3>
     ]
 }
 
-func complexExample = {
+func complexExample  {
     // 混合各种语句
     #mask *__**_
     `wqesad`
@@ -54,7 +54,7 @@ iota edge2 = [ null , null , null ]           // 带空元素的列表
 iota edge4 = 1234567890.1234567890
 
 // ========== 特殊符号测试 ==========
-func specialChars = {
+func specialChars {
     _test/function
     $weird/identifier
     <characters_here>

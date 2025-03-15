@@ -666,15 +666,11 @@ function peg$parse(input, options) {
       while (s4 !== peg$FAILED) {
         s3.push(s4);
         s4 = peg$currPos;
-        s5 = peg$parseNEWLINE();
-        if (s5 !== peg$FAILED) {
-          s5 = peg$parseStatement();
-          if (s5 === peg$FAILED) {
-            peg$currPos = s4;
-            s4 = peg$FAILED;
-          } else {
-            s4 = s5;
-          }
+        s5 = peg$parse__();
+        s5 = peg$parseStatement();
+        if (s5 === peg$FAILED) {
+          peg$currPos = s4;
+          s4 = peg$FAILED;
         } else {
           s4 = s5;
         }
