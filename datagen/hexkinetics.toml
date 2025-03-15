@@ -1,0 +1,167 @@
+["direction/const"]
+name = "Alidade's Purification II"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b], "start_dir": 1b}}'
+args = "entity → vector"
+description = "Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0)."
+
+["visibility/const"]
+name = "Visibility Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 2b, 0b, 4b, 0b, 4b, 0b], "start_dir": 5b}}'
+args = "entity, vector → bool"
+description = "Returns whether a vector is currently within vision of an entity."
+
+["is_gravity/const"]
+name = "Inertia Purification"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 4b, 4b, 2b], "start_dir": 1b}}'
+args = "entity → bool"
+description = "Determines whether the entity is currently in a state of inertia or if it is subject to the force of gravity. If the entity is found to be in a state of inertia, purification returns true."
+
+["hadamard/const"]
+name = "Hadamard's Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 4b, 5b, 4b, 0b, 4b], "start_dir": 4b}}'
+args = "vector, vector → vector"
+description = "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector."
+
+["pixel/raycast"]
+name = "Sniper's Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 5b, 4b, 5b, 2b, 1b, 2b], "start_dir": 1b}}'
+args = "vector, vector → vector"
+description = "Architect's Distillation but it  returns the precise hit position. Very versatile, it can be used on various entities and materials with the exception of air."
+
+["get_vehicle/const"]
+name = "Vehicle Purification"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 2b, 1b, 1b, 0b, 1b, 1b], "start_dir": 2b}}'
+args = "entity → entity"
+description = "Pops the entity off the stack and pushes a reference to the vehicle it is currently occupying. Returns Null if the entity is not riding any vehicle."
+
+["get_rider/const"]
+name = "Jockey Purification"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 2b, 1b, 1b, 4b, 1b, 2b, 1b, 4b, 1b, 1b], "start_dir": 2b}}'
+args = "entity → entity"
+description = "Pops the entity (vehicle) off the stack and pushes a reference to the entity that is currently occupying it. If vehicle has more than one passenger it returns the first one."
+
+["get_shooter/const"]
+name = "Shooter Purification"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 1b, 2b, 4b, 2b, 1b], "start_dir": 1b}}'
+args = "entity → entity"
+description = "It pops an object off the stack and pushes out the reference to the entity that fired it. Returns Null if the entity isn't a projectile. Only works if shooter is in your ambit."
+
+["round/const"]
+name = "Imprecision Purification"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 2b, 1b, 1b, 4b, 4b], "start_dir": 2b}}'
+args = "num/vec → num/vec"
+description = "Number or elements in given vector are rounded to the nearest whole."
+
+["reflection/const"]
+name = "Optician's Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 5b, 5b, 5b, 5b, 5b], "start_dir": 2b}}'
+args = "vector, vector → vector"
+description = "This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the second vector, which acts as a normal and defines the reflection plane."
+
+["get_vec/const"]
+name = "Sphere Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 2b, 2b, 1b, 2b, 5b], "start_dir": 2b}}'
+args = "vec, num → list"
+description = "Take a position and maximum distance on the stack, and combine them into a list of all block positions that are needed to create an hollow sphere of that range."
+
+["get_vec_from/const"]
+name = "Span Distillation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 1b, 1b, 5b, 4b, 5b], "start_dir": 4b}}'
+args = "vector, vector → list"
+description = "Combine two positions and create a list that includes those points as well as all block positions located between them."
+
+["rotate/spell"]
+name = "Rotate"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 4b, 2b, 1b, 1b, 1b, 2b], "start_dir": 1b}}'
+args = "entity, vec →"
+description = "Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector. It costs 1/8 of amethyst dust or if cast on another player it will cost one amethyst shard."
+
+["rotate_two/spell"]
+name = "Rotate II"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 2b, 4b, 5b, 5b, 5b, 4b], "start_dir": 4b}}'
+args = "entity, vec →"
+description = "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. If rotated to [0, 0, 0] it will completly stop its velocity. Costs 3/4 amethyst dust."
+
+["rotate_block/spell"]
+name = "Rotate: Block"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 4b, 5b, 5b, 5b, 0b, 4b, 2b, 1b, 1b, 1b, 2b], "start_dir": 2b}}'
+args = "vector, vector →"
+description = "Accepts a vector and a direction vector, rotates block at a given vector. Although it may appear to function similar to explosions, high explosion-resistant blocks are not affected. Costs 1/8 of amethyst dust."
+
+["swap/spell"]
+name = "Momentum Swap"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 4b, 4b, 2b, 4b, 5b, 1b, 2b, 4b, 2b, 2b, 4b, 2b], "start_dir": 3b}}'
+args = "entity, entity →"
+description = "Swaps the motion of two entities. Costs 1 amethyst dust."
+
+["lesser_teleport/spell"]
+name = "Lesser Teleport"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 5b, 2b, 1b, 0b, 5b, 4b, 1b, 4b, 5b], "start_dir": 0b}}'
+args = "entity, vec/num →"
+description = "Takes entity and number or vector off the stack, then teleports the entity to its vector but with all fractions changed to given number, or fractions of every component changed to number in responding component in given vector."
+
+["projectile/spell"]
+name = "Place Projectile"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 1b, 1b, 0b, 1b, 1b, 2b, 1b], "start_dir": 2b}}'
+args = "vector →"
+description = "Remove a location from the stack, then pick a projectile item and place it at the given location. The following items are currently compatible: normal, tipped, and spectral arrows, snowballs, eggs, tridents, ender pearls, eyes of ender, and fire charges. Costs 1 amethyst shard."
+
+["zero_g/spell"]
+name = "Twokai's Ideal Condition"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 5b, 5b, 5b, 0b, 4b, 2b, 4b, 4b, 2b, 4b, 0b, 5b, 5b, 5b, 0b, 0b], "start_dir": 3b}}'
+args = "entity, number →"
+description = "Makes an entity not affected by gravity or friction for certain amount of time."
+
+["fast/spell"]
+name = "Propulsion"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 1b, 5b, 4b, 4b, 1b, 1b, 1b, 0b, 1b, 1b, 1b, 4b, 4b, 5b, 1b, 5b, 5b, 4b, 4b, 5b], "start_dir": 3b}}'
+args = "entity, number, vector →"
+description = "This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a given number."
+
+["move_block/spell"]
+name = "Greater Translocation"
+modid = "hexkinetics"
+modName = "HexKinetics"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 5b, 1b, 1b, 5b, 1b, 1b, 1b, 5b, 1b, 1b, 5b, 2b, 1b, 1b, 5b, 1b, 5b, 5b, 0b, 5b, 5b, 5b, 1b, 1b, 5b, 1b, 5b, 5b, 0b, 5b, 5b], "start_dir": 2b}}'
+args = "vector, vector →"
+description = "This spell lets me teleport almost any block nearly anywhere in the entire world! There does seem to be a limit, but it is much greater than the normal radius of influence I am used to."

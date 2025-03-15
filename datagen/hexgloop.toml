@@ -1,0 +1,496 @@
+[read_orchard]
+name = "Orchard's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 5b, 5b, 5b, 5b, 5b], "start_dir": 2b}}'
+args = "→ num"
+description = "Picks a number from my mind's orchard representing the index of my thought."
+
+[read_orchard_list]
+name = "Orchard's Reflection II"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 5b, 5b, 5b, 5b, 5b, 2b, 1b, 1b, 1b, 5b, 2b, 5b, 1b, 1b, 1b], "start_dir": 2b}}'
+args = "→ list"
+description = "Picks values from my orchard as a list."
+
+[in_overworld]
+name = "Terra Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 4b, 0b, 5b, 4b, 2b, 4b, 5b, 2b, 1b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 1b, 0b], "start_dir": 2b}}'
+args = "entity → boolean"
+description = "Returns whether or not the entity is in the overworld"
+
+[in_nether]
+name = "Everflame Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 4b, 5b, 4b, 0b, 5b, 4b, 2b, 4b, 5b, 2b, 1b, 1b, 0b, 1b, 0b, 1b, 0b, 1b], "start_dir": 1b}}'
+args = "entity → boolean"
+description = "Returns whether or not the entity is in the nether"
+
+[opnop_useless]
+name = "Aergia's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 1b, 4b, 5b, 5b], "start_dir": 0b}}'
+description = "Does absolutely nothing."
+
+[check_ambit]
+name = "Canary's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 4b, 0b], "start_dir": 1b}}'
+args = "vec | entity → boolean"
+description = "Returns whether or not the given entity or position is in ambit"
+
+[catchy_eval]
+name = "Athena's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 1b, 4b, 5b, 5b, 0b], "start_dir": 2b}}'
+args = "[pattern] | pattern → many, boolean"
+description = "Casts the pattern or patterns on the stack similarly to Hermes' Gambit. If its cast mishaps it will continue on instead of stopping the hex. Returns whether or not the cast mishap"
+
+[reveal_mishap]
+name = "Athena's Revelation"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 1b, 4b, 5b, 5b, 5b, 5b, 4b], "start_dir": 2b}}'
+description = "Reveals the last mishap. This may behave strangely when cast directly from my staff"
+
+[assert]
+name = "Euler's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 2b], "start_dir": 0b}}'
+args = "boolean, ?any →"
+description = "Asserts that the boolean is true and mishaps if not. The mishap is labeled with whatever pattern, if any, comes before it on the stack"
+
+[gloopimind_upload]
+name = "Gloopimind Upload"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 0b, 2b, 0b, 1b, 1b, 2b, 2b, 0b], "start_dir": 0b}}'
+description = "Uploads my gloopifact's ravenmind to my staff"
+
+[gloopimind_download]
+name = "Gloopimind Download"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 2b, 4b, 2b, 1b, 0b, 2b, 2b, 1b], "start_dir": 0b}}'
+description = "Downloads my staff's ravenmind to my gloopifact"
+
+[bind_mirror]
+name = "Bind Mirror"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 2b, 0b, 0b, 2b, 0b, 2b, 0b], "start_dir": 0b}}'
+args = "vec | null →"
+description = "This allows me to bind myself to a Mirrored Pedestal so that its held item is reflected into my empty hand."
+
+[temp_bind_mirror]
+name = "Temp Bind Mirror"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 4b, 0b, 0b, 4b, 0b, 4b, 0b], "start_dir": 5b}}'
+args = "vec | null →"
+description = "Similar to Bind Mirror but only lasting for the single instant of my cast."
+
+[set_hotbar_slot]
+name = "Handy Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 1b, 0b, 2b, 0b, 1b], "start_dir": 4b}}'
+args = "num →"
+description = "Selects the slot indexed by the given number"
+
+[get_hotbar_slot]
+name = "Handy Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 4b, 0b, 5b, 0b, 4b], "start_dir": 1b}}'
+args = "→ num"
+description = "Returns the index of the currently selected slot"
+
+[swap_hotbar_slot]
+name = "Handoff"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 4b, 0b, 5b, 0b, 4b, 2b, 4b, 0b, 5b, 0b, 4b], "start_dir": 1b}}'
+description = "Swaps my held items between my hands"
+
+[torty_transfer]
+name = "Torty Transfer"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 5b, 0b, 4b, 5b, 1b, 0b, 2b, 0b, 0b, 2b, 4b, 2b, 1b], "start_dir": 3b}}'
+args = "slot, slot | null, num → num, entity?"
+description = "Transfers up to the given number of items from the first slot to the second slot. It returns the number of items left in the input slot. If the second slot is null it drops the items on the caster and pushes a reference of it to the stack."
+
+[torty_count]
+name = "Torty's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 1b, 0b, 2b, 5b, 2b, 0b, 1b, 0b, 4b, 4b, 0b], "start_dir": 1b}}'
+args = "slot → num"
+description = "Returns how many items are in the given slot."
+
+[torty_max_count]
+name = "Torty's Max Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 2b, 5b, 2b, 0b, 1b, 0b, 4b, 5b, 4b, 1b], "start_dir": 5b}}'
+args = "slot → num"
+description = "Returns how many items can fit in the given slot."
+
+[torty_inv_sizes]
+name = "Torty's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 1b, 4b, 5b, 1b, 4b, 5b], "start_dir": 1b}}'
+args = "→ [num]"
+description = "Returns a list containing the sizes of every inventory the inventorty can see, sorted based on the inventory index."
+
+[gloopifact_read]
+name = "Gloopcaster's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b, 5b, 4b, 2b, 4b, 5b, 0b], "start_dir": 0b}}'
+args = "→ any"
+description = "Reads the iota from the gloopifact's internal focus"
+
+[gloopifact_write]
+name = "Gloopcaster's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b, 5b, 4b, 2b, 4b, 5b, 0b], "start_dir": 0b}}'
+args = "any →"
+description = "Writes an iota to the gloopifact's internal focus"
+
+[gloopifact_check_read]
+name = "Gloopitor's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 5b, 4b, 2b, 4b, 5b, 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b], "start_dir": 0b}}'
+args = "→ boolean"
+description = "Returns whether or not the internal focus can be read"
+
+[gloopifact_check_write]
+name = "Gloopessor's Distillation"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 5b, 4b, 2b, 4b, 5b, 0b, 0b, 2b, 1b, 1b, 1b, 1b, 1b], "start_dir": 0b}}'
+args = "any → boolean"
+description = "Returns whether or not the given iota can be written to the internal focus."
+
+[set_label]
+name = "Dymo's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 1b, 2b, 0b, 1b, 0b, 2b, 0b, 1b, 5b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 3b}}'
+args = "labely →"
+description = "Assigns a label based on the given iota to the currently selected slot of a labelable item in my offhand."
+
+[conjure_tasty_treat]
+name = "Conjure Tasty Treat"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 0b, 2b, 0b], "start_dir": 3b}}'
+args = "vec →"
+description = "Conjures a thought gummy at the given position. Costs 1 dust."
+
+[get_item_bound_caster]
+name = "Merchant's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 4b, 5b, 5b, 5b, 5b, 5b], "start_dir": 0b}}'
+args = "→ string"
+description = "Returns the name of whoever wrote the coin in my other hand."
+
+[compare_item_bound_caster]
+name = "Notary's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 2b], "start_dir": 0b}}'
+args = "entity → boolean"
+description = "Takes a player entity and returns whether or not they wrote the coin in my other hand."
+
+[cooler_get_item_bound_caster]
+name = "Merchant's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 0b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 0b}}'
+args = "entity → string"
+description = "Returns the name of whoever wrote the coin in the given item entity."
+
+[cooler_compare_item_bound_caster]
+name = "Notary's Distillation"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 5b, 0b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 1b, 4b, 2b], "start_dir": 0b}}'
+args = "entity, entity → boolean"
+description = "Takes a player entity from the top of the stack and an item entity and returns whether or not the player wrote the coin in the item entity."
+
+[truename_agree_eula]
+name = "Acknowledge Truename"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 0b, 5b, 4b, 5b], "start_dir": 2b}}'
+description = "Recently I've felt worries whenever I write my truename. This spell seems to silence those worries. I can always cast it again if I'd like to be more cautious."
+
+[dispense]
+name = "Dispense"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 4b, 1b, 5b, 5b, 5b, 1b, 2b, 2b, 5b, 1b, 5b, 2b], "start_dir": 3b}}'
+args = "vec, vec, item ent →"
+description = "Dispenses the given item entity as if it were in a dispenser at the first position facing the direction given by the second vector.Costs half a dust for most items, 1 charged for arrows, and 3 dust for other projectiles"
+
+[frog_eat]
+name = "Frogi Snack"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 4b, 2b, 4b, 0b, 4b, 1b, 0b, 5b, 4b, 0b], "start_dir": 1b}}'
+args = "entity →"
+description = "I've seen frogs in a nature try to eat slimes and magma cubes, perhaps my Frogi would like to do the same ?Costs about a shard"
+
+[block_read]
+name = "Ritualist's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 0b, 5b, 0b, 4b, 0b], "start_dir": 1b}}'
+args = "vec → any"
+description = "Returns the iota stored by the block at the given position"
+
+[block_write]
+name = "Ritualist's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 2b, 0b], "start_dir": 1b}}'
+args = "vec, any →"
+description = "Stores the given iota in the block at the given position, if possible"
+
+[can_block_read]
+name = "Surveyor's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 0b, 5b, 0b, 4b, 0b, 1b], "start_dir": 1b}}'
+args = "vec → boolean"
+description = "Returns whether the given block contains a readable iota"
+
+[can_block_write]
+name = "Surveyor's Distillation"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 2b, 0b, 1b], "start_dir": 1b}}'
+args = "vec, any → boolean"
+description = "Returns if I can store the given iota in the block at the given position."
+
+[stonecut]
+name = "Cut Stone"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 0b, 2b, 5b, 1b, 1b, 1b, 1b, 4b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 1b, 4b], "start_dir": 1b}}'
+args = "item entity, num | item type →"
+description = "Cuts the given item entity as if it were in a stonecutter. If it's given a number it chooses the cut based on that index in the stonecutter, if it's given an item type it tries to cut it into that type.Costs an 8th of a dust."
+
+["craft/potion"]
+name = "Craft Potion"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 0b, 0b, 1b, 2b, 1b, 0b, 0b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Crafts a Casting Potion. Costs about 1 shard."
+
+["craft/gloopifact"]
+name = "Craft Gloopifact"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 4b, 2b, 4b, 5b, 0b, 4b, 0b, 1b, 5b, 5b, 0b, 4b, 0b, 1b, 1b, 0b, 4b, 0b, 5b, 0b, 0b, 0b, 0b, 4b, 2b, 1b, 1b, 1b, 1b, 1b, 5b, 0b, 0b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Costs about 16 Charged Amethyst"
+
+["craft/inventorty"]
+name = "Teach Inventorty"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 5b, 5b, 5b, 5b, 5b, 0b, 5b, 4b, 0b, 5b, 1b, 2b, 1b, 5b, 0b, 4b, 5b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Costs about 4 Charged Amethyst"
+
+["craft/hex_blade"]
+name = "Forge Hex Blade"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 5b, 5b, 5b, 5b, 5b, 0b, 0b, 0b, 4b, 5b, 0b, 0b, 0b, 0b, 4b, 5b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Similar to other casting instrument creation spells. Costs about 4 Charged Amethyst"
+
+["craft/hex_pickaxe"]
+name = "Forge Hex Pickaxe"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 5b, 2b, 1b, 0b, 4b, 5b, 0b, 1b, 4b, 1b, 0b, 5b, 4b, 0b, 1b, 2b, 5b, 5b, 5b, 1b, 4b, 1b, 5b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Similar to other casting instrument creation spells. Costs about 4 Charged Amethyst"
+
+["craft/casting_frog"]
+name = "Teach Frogi"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 5b, 2b, 5b, 4b, 5b, 1b, 2b, 1b, 5b, 4b, 5b, 2b, 5b, 5b, 1b, 4b, 5b, 0b, 2b, 0b, 5b, 4b, 1b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+description = "Costs about 4 Charged Amethyst"
+
+[read_comparator]
+name = "Etho's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 2b, 0b, 0b, 2b, 0b, 0b, 2b, 2b], "start_dir": 2b}}'
+args = "vec → num"
+description = "Reads the value of the block at the given position as a comparator would"
+
+[read_redstone]
+name = "Seth's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 0b, 0b, 4b, 0b, 0b, 4b, 4b], "start_dir": 3b}}'
+args = "vec → num"
+description = "Gets the redstone signal strength of the block of at the given position"
+
+[conjure_redstone]
+name = "Conjure Redstone Block"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 2b, 2b], "start_dir": 0b}}'
+args = "vec, num →"
+description = "Conjures a redstone-like block at the given position and with the given signal strength. The strength is bound between 0 and 15. This costs 1 dust."
+
+[read_pendant]
+name = "Memento's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b, 5b, 5b, 5b, 5b, 5b, 1b], "start_dir": 2b}}'
+args = "→ any"
+description = "Copy the iota stored in a pendant I'm wearing and add it to the stack"
+
+[write_pendant]
+name = "Memento's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 2b, 1b, 1b, 1b, 1b, 1b, 5b], "start_dir": 2b}}'
+args = "any →"
+description = "Remove the top iota from the stack, and save it into the pendant I'm wearing"
+
+[check_read_pendant]
+name = "Cherishing Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 4b, 5b, 5b, 5b, 5b, 5b, 1b, 1b], "start_dir": 2b}}'
+args = "→ boolean"
+description = "If the pendant I'm wearing holds an iota I can read, returns True. Otherwise, returns False."
+
+[check_write_pendant]
+name = "Nostalgic Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 2b, 1b, 1b, 1b, 1b, 1b, 5b, 1b], "start_dir": 2b}}'
+args = "→ boolean"
+description = "If I could save an iota into the pendant I'm wearing, returns True. Otherwise, returns False."
+
+[read_ring]
+name = "Anularis Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b], "start_dir": 1b}}'
+args = "→ any"
+description = "Copy the iota stored in a ring I'm wearing and add it to the stack. If I'm wearing multiple rings this will prefer the one on the hand opposite the one I'm casting with."
+
+[write_ring]
+name = "Anularis Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b], "start_dir": 1b}}'
+args = "any →"
+description = "Remove the top iota from the stack, and save it into the ring I'm wearing. If I'm wearing multiple rings this will prefer the one on the hand opposite the one I'm casting with."
+
+[read_left_ring]
+name = "Lover's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 0b, 1b, 1b, 1b, 1b, 1b, 0b, 5b, 5b], "start_dir": 1b}}'
+args = "→ any"
+description = "Copy the iota stored in a ring I'm wearing and add it to the stack. If I'm wearing multiple rings this will prefer the one on my off hand."
+
+[write_left_ring]
+name = "Lover's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 0b, 5b, 5b, 5b, 5b, 5b, 0b, 1b, 1b], "start_dir": 1b}}'
+args = "any →"
+description = "Remove the top iota from the stack, and save it into the ring I'm wearing. If I'm wearing multiple rings this will prefer the one on my off hand."
+
+[read_right_ring]
+name = "Rival's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 0b, 1b, 1b, 1b, 1b, 1b], "start_dir": 1b}}'
+args = "→ any"
+description = "Copy the iota stored in a ring I'm wearing and add it to the stack. If I'm wearing multiple rings this will prefer the one on my main hand."
+
+[write_right_ring]
+name = "Rival's Gambit"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 0b, 5b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "any →"
+description = "Remove the top iota from the stack, and save it into the ring I'm wearing. If I'm wearing multiple rings this will prefer the one on my main hand."
+
+[check_read_ring]
+name = "Authenicator's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 5b, 1b, 4b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 1b], "start_dir": 1b}}'
+args = "→ any"
+description = "If a ring I'm wearing holds an iota I can read, returns True. Otherwise, returns False."
+
+[check_write_ring]
+name = "Jeweler's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b, 1b, 5b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 5b], "start_dir": 1b}}'
+args = "any →"
+description = "If I could save an iota into a ring I'm wearing, returns True. Otherwise, returns False."
+
+[clear_truename]
+name = "Renew Truename"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 0b, 0b, 2b, 0b, 0b, 0b, 2b, 0b, 5b, 5b, 4b, 5b, 0b, 1b, 2b, 1b, 1b, 0b, 4b, 0b, 0b, 0b, 4b, 0b, 0b, 0b], "start_dir": 3b}}'
+description = "This spell lets me renew my truename, effectively clearing any stored references to it."
+
+[torty_get_type]
+name = "Curiosity's Purification"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 0b, 4b, 1b, 4b, 0b, 5b, 4b, 5b, 2b, 1b, 2b], "start_dir": 0b}}'
+args = "slot → itemtype"
+description = "Returns the type of the item in the given slot"
+
+[stringify_mishap]
+name = "Athena's Reflection"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 0b, 1b, 4b, 5b, 5b, 5b, 5b, 2b], "start_dir": 2b}}'
+args = "→ string"
+description = "Returns a string with information on the last mishap."
+
+[torty_inv_names]
+name = "Torty's Reflection II"
+modid = "hexgloop"
+modName = "Hex Gloop"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 4b, 1b, 4b, 1b, 4b, 1b, 4b, 0b, 4b], "start_dir": 1b}}'
+args = "→ [string]"
+description = "Returns a list containing the names of every inventory the inventorty can see, sorted based on the inventory index."

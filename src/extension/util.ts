@@ -6,6 +6,7 @@ import {SyntaxError} from "../compile/peggy/HexCasting"
 export function patternMarkdown(pattern: PatternDefine) {
     const markdownString = new vscode.MarkdownString()
     markdownString.supportHtml = true
+    markdownString.appendMarkdown(`## ${pattern.name}  ` + '\n')
     markdownString.appendMarkdown(`***\`${pattern.id}\`***        ${(pattern.modName ?? pattern.modid ?? '')}  ` + '\n')
     markdownString.appendMarkdown(`**${pattern.args ?? "no args"}**  ` + '\n')
     markdownString.appendMarkdown("***\n")

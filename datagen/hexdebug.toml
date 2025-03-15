@@ -1,0 +1,29 @@
+["const/debugging"]
+name = "Debugger's Reflection"
+modid = "hexdebug"
+modName = "HexDebug"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 1b, 0b, 4b, 4b], "start_dir": 1b}}'
+args = "→ bool"
+description = "Adds True to the top of the stack if executed by a Debugger, or False otherwise."
+
+["breakpoint/before"]
+name = "Set Breakpoint Before"
+modid = "hexdebug"
+modName = "HexDebug"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 0b, 5b, 2b, 1b, 1b, 0b], "start_dir": 3b}}'
+description = "Pauses the Debugger before executing this pattern."
+
+["breakpoint/after"]
+name = "Set Breakpoint After"
+modid = "hexdebug"
+modName = "HexDebug"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 4b, 1b, 0b, 2b], "start_dir": 1b}}'
+description = "Pauses the Debugger after executing this pattern (ie. before executing the next pattern)."
+
+["craft/debugger"]
+name = "Craft Debugger"
+modid = "hexdebug"
+modName = "HexDebug"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 4b, 1b, 0b, 0b, 0b, 0b, 0b, 4b, 5b, 0b, 4b, 0b, 5b, 0b, 4b, 2b, 4b, 0b, 5b, 0b, 0b, 0b, 4b, 0b, 0b, 0b, 5b, 0b, 0b, 0b, 4b, 0b], "start_dir": 3b}}'
+args = "entity, [pattern] →"
+description = "Creates a Debugger that casts a Hex, similar to certain other patterns I've used in the past.Costs about ten Charged Amethyst."

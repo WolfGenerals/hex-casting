@@ -1,5 +1,6 @@
 import * as fs from "node:fs"
 import * as toml from "@iarna/toml"
+import {JsonMap} from "@iarna/toml"
 import lodash from "lodash"
 import {PatternIota} from "../src/compile/Iota"
 
@@ -14,7 +15,10 @@ type dbType= {
     args:string
     description:string
 }
-const out = {
+const out:Map<string,object> = new Map()
+function getOrCreate(key:string):object{
+    if (!out.has(key)) out.set(key,{})
+    return out.get(key) as object
 }
 
 for (const [name, data] of Object.entries(db)){
@@ -27,7 +31,9 @@ for (const [name, data] of Object.entries(db)){
         (dbData.pattern && dbData.direction)?
         PatternIota.fromAngles(dbData.pattern,dbData.direction).asNbt().toSNBTValue('formated')
             : undefined
-    lodash.set(out,dbData.name,{
+    const modid = dbData.modid??'unknown'
+    const o = getOrCreate(modid)
+    lodash.set(o,dbData.name,{
         // id:dbData.name,
         name:name,
         modid:dbData.modid,
@@ -40,6 +46,8 @@ for (const [name, data] of Object.entries(db)){
     })
 }
 
-const outString = toml.stringify(out)
+for (const [key,value] of out){
+    const outString = toml.stringify(<JsonMap>value)
 
-fs.writeFileSync('./default.toml', outString)
+    fs.writeFileSync(`./${key}.toml`, outString)
+}

@@ -1,0 +1,216 @@
+[get_main_hand]
+name = "Duelist's Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 2b, 1b, 5b], "start_dir": 1b}}'
+args = "entity → item stack"
+
+[get_off_hand]
+name = "Shieldbearer's Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 2b, 4b], "start_dir": 1b}}'
+args = "entity → item stack"
+
+["get_inventory/stacks"]
+name = "Hoarder's Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 0b, 1b, 2b], "start_dir": 0b}}'
+args = "vector, vector → list"
+
+["get_inventory/items"]
+name = "Collector's Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 0b, 5b, 4b], "start_dir": 0b}}'
+args = "vector, vector → list"
+
+["get_stack_prop/item"]
+name = "Logistician's Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 5b, 4b, 4b], "start_dir": 4b}}'
+args = "item stack → item"
+
+["get_stack_prop/size"]
+name = "Treasurer's Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 2b, 5b, 4b, 5b], "start_dir": 4b}}'
+args = "item stack → num"
+
+["pattern/rotate"]
+name = "Revolving Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 2b, 1b, 1b, 1b, 1b], "start_dir": 4b}}'
+args = "pattern, num → pattern"
+
+["pattern/merge"]
+name = "Painter's Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 4b, 5b, 5b, 5b, 5b, 4b], "start_dir": 5b}}'
+args = "pattern, pattern → pattern"
+
+["pattern/head"]
+name = "Starting Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 5b, 5b, 5b], "start_dir": 1b}}'
+args = "pattern, num → pattern"
+
+["pattern/tail"]
+name = "Ending Distillation"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 1b, 1b, 1b, 1b], "start_dir": 4b}}'
+args = "pattern, num → pattern"
+
+["pattern/start_dir"]
+name = "Winding Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 1b, 1b, 1b, 1b], "start_dir": 4b}}'
+args = "pattern → num"
+
+["pattern/line_count"]
+name = "Fragment's Purification"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 5b, 5b, 5b], "start_dir": 4b}}'
+args = "pattern → num"
+
+["colorizer/save"]
+name = "Memorize Pigment"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 4b, 0b, 5b, 5b, 4b, 0b, 2b, 2b, 0b, 5b, 0b, 1b, 2b, 1b], "start_dir": 0b}}'
+args = "pattern →"
+
+["colorizer/load"]
+name = "Recall Pigment"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 4b, 0b, 5b, 5b, 4b, 0b, 2b, 2b, 0b, 5b, 1b, 5b, 4b, 5b], "start_dir": 0b}}'
+args = "pattern →"
+
+["colorizer/delete"]
+name = "Forget Pigment"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 4b, 0b, 5b, 5b, 4b, 0b, 2b, 2b, 0b, 5b, 0b, 2b, 2b], "start_dir": 0b}}'
+args = "pattern →"
+
+["create_shield/normal"]
+name = "Hex Shield"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 0b, 1b, 1b, 1b, 0b, 1b], "start_dir": 0b}}'
+args = "vec, vec, num →"
+
+["create_shield/glitchy"]
+name = "Unstable Hex Shield"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 5b, 2b, 0b, 1b, 1b, 5b, 2b, 0b], "start_dir": 0b}}'
+args = "vec, vec, num →"
+
+[construct_get_self]
+name = "Automaton's Reflection"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 0b, 1b, 2b, 1b, 1b], "start_dir": 1b}}'
+args = "→ entity"
+
+["give_command/pick_up"]
+name = "Command: Pick Up Item"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 2b, 2b, 1b, 4b, 0b, 4b, 0b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+
+["give_command/drop_off"]
+name = "Command: Drop Item"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 5b, 2b, 0b, 2b, 0b], "start_dir": 1b}}'
+args = "[pattern] →"
+
+["give_command/move_to"]
+name = "Command: Move To Position"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 5b, 0b, 2b, 4b, 5b, 5b, 5b, 4b], "start_dir": 1b}}'
+args = "vector, [pattern] →"
+
+["give_command/harvest"]
+name = "Command: Harvest"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 5b, 5b, 1b, 2b, 0b, 1b, 2b], "start_dir": 1b}}'
+args = "vector, [pattern] →"
+
+["give_command/use/block"]
+name = "Command: Use On Block"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 5b, 2b, 1b, 1b], "start_dir": 1b}}'
+args = "vector, vector, [pattern] →"
+
+["instructions/send"]
+name = "Send Instructions"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 4b, 5b], "start_dir": 1b}}'
+args = "entity, [pattern] →"
+
+["instructions/broadcast"]
+name = "Broadcast Instructions"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 4b, 4b, 5b, 5b, 5b, 5b, 0b, 5b], "start_dir": 2b}}'
+args = "vector, [pattern] →"
+
+[bind_construct]
+name = "Artificer's Gambit"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 4b, 4b, 0b, 2b, 2b, 1b, 0b, 2b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b, 1b, 0b], "start_dir": 1b}}'
+args = "pattern | entity | null →"
+
+["create_construct/spider"]
+name = "Create Spider Construct"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 0b, 5b, 0b, 5b, 0b, 0b, 5b, 0b, 5b, 0b, 5b, 0b, 0b, 4b, 1b, 5b, 4b, 5b, 2b, 0b, 2b, 5b, 4b, 5b, 1b], "start_dir": 3b}}'
+args = "entity, entity, entity →"
+
+["get_entity/construct"]
+name = "Entity Purification: Construct"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 2b, 4b, 5b, 4b, 4b, 0b, 1b, 2b, 2b, 1b], "start_dir": 2b}}'
+args = "vector → entity or null"
+
+["zone_entity/construct"]
+name = "Zone Distillation: Construct"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 5b, 5b, 5b, 5b, 0b, 2b, 1b, 2b, 2b, 0b, 1b, 2b, 2b, 1b], "start_dir": 2b}}'
+args = "vector, number → list"
+
+["zone_entity/not_construct"]
+name = "Zone Distillation: Non-Construct"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 1b, 1b, 1b, 1b, 1b, 0b, 4b, 5b, 4b, 4b, 0b, 1b, 2b, 2b, 1b], "start_dir": 2b}}'
+args = "vector, number → list"
+
+[set_fake_impetus_player]
+name = "Bind Figment"
+modid = "hexbound"
+modName = "Hexbound"
+pattern = '{"hexcasting:type": "hexcasting:pattern", "hexcasting:data": {"angles": [B; 5b, 4b, 5b, 2b, 4b, 5b, 0b, 5b, 4b, 1b, 1b, 2b, 1b, 0b, 2b], "start_dir": 0b}}'
+args = "vector →"

@@ -2,13 +2,13 @@
   "name": "hexcasting",
   "displayName": "Hex Casting Compiler",
   "description": "",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/WolfGenerals/hex-casting.git"
   },
   "publisher": "WolfGenerals",
-  "icon": "resources/icons/hex casting dark.png",
+  "icon": "resources/icons/hex_casting_dark.png",
   "engines": {
     "vscode": "^1.98.0"
   },
