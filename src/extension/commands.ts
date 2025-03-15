@@ -66,15 +66,20 @@ async function build(file?: vscode.Uri) {
         const pegTopLevels = peggyParse(fileContent)
 
         logger.info("- loading pattern database")
-        const loadingUsePattern = pegTopLevels
-            .filter((topLevel) => topLevel.type === 'use_pattern')
-            .map(async (usePattern) => {
-                logger.info(`loading ${usePattern.filePath}`)
-                const usedUri = vscode.Uri.joinPath(rootDir, usePattern.filePath)
-                const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
-                compileScope.patterns.loadFromFile(usedContent)
-            })
-        await Promise.all(loadingUsePattern)
+        // const loadingUsePattern = pegTopLevels
+        //     .filter((topLevel) => topLevel.type === 'use_pattern')
+        //     .map(async (usePattern) => {
+        //         logger.info(`loading ${usePattern.filePath}`)
+        //         const usedUri = vscode.Uri.joinPath(rootDir, usePattern.filePath)
+        //         const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
+        //         compileScope.patterns.loadFromFile(usedContent)
+        //     })
+        // await Promise.all(loadingUsePattern)
+        for (const use of pegTopLevels.filter((topLevel) => topLevel.type === 'use_pattern')){
+            const usedUri = vscode.Uri.joinPath(rootDir, use.filePath)
+            const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
+            compileScope.patterns.loadFromFile(usedContent)
+        }
 
         logger.info("- compiling")
         const exportList: Compiled[] = []

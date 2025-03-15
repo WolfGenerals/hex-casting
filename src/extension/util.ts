@@ -61,17 +61,23 @@ export async function collectPatterns(ast: PegTopLevel[], rootDir: vscode.Uri)
         }
     }
 
-    await Promise.all(
-        usedToml.map(async (filePath) => {
-            const usedUri = vscode.Uri.joinPath(rootDir, filePath)
-            if (!await checkFileExists(usedUri)) {
-                vscode.window.showErrorMessage(`File '${usedUri.path}' not found`)
-                return
-            }
-            const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
-            patterns.loadFromFile(usedContent)
-        }),
-    )
+    // await Promise.all(
+    //     usedToml.map(async (filePath) => {
+    //         const usedUri = vscode.Uri.joinPath(rootDir, filePath)
+    //         if (!await checkFileExists(usedUri)) {
+    //             vscode.window.showErrorMessage(`File '${usedUri.path}' not found`)
+    //             return
+    //         }
+    //         const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
+    //         patterns.loadFromFile(usedContent)
+    //     }),
+    // )
+    for (const filePath of usedToml){
+        const usedUri = vscode.Uri.joinPath(rootDir, filePath)
+        if (!await checkFileExists(usedUri)) continue
+        const usedContent = (await vscode.workspace.openTextDocument(usedUri)).getText()
+        patterns.loadFromFile(usedContent)
+    }
 
     cachePatternManager.lastUpdated = Date.now()
     cachePatternManager.usedToml = usedToml
