@@ -7,6 +7,8 @@ import ListPayload from "../nbt/tag/payloads/ListPayload"
 import {IPayload} from "../nbt/tag/payloads/IPayload"
 import ByteArrayPayload from "../nbt/tag/payloads/ByteArrayPayload"
 import TagId from "../nbt/tag/TagId"
+import LongArrayPayload from "../nbt/tag/payloads/LongArrayPayload"
+import LongPayload from "../nbt/tag/payloads/LongPayload"
 
 export interface Iota {
     asNbt(): CompoundPayload;
@@ -225,6 +227,7 @@ export class Vec3Iota implements Iota {
     }
 
     asNbt(): CompoundPayload {
+        const payload = this.vecOf1$19$2()
         return new CompoundPayload([
             new Tag(
                 HEX_TYPE,
@@ -232,22 +235,50 @@ export class Vec3Iota implements Iota {
             ),
             new Tag(
                 HEX_DATA,
-                new CompoundPayload([
-                    new Tag(
-                        "x",
-                        new DoublePayload(this.x),
-                    ),
-                    new Tag(
-                        "y",
-                        new DoublePayload(this.y),
-                    ),
-                    new Tag(
-                        "z",
-                        new DoublePayload(this.z),
-                    ),
-                ]),
+                payload,
             ),
         ])
+    }
+
+    private vecOf1$20$1() {
+        return new CompoundPayload([
+            new Tag(
+                "x",
+                new DoublePayload(this.x),
+            ),
+            new Tag(
+                "y",
+                new DoublePayload(this.y),
+            ),
+            new Tag(
+                "z",
+                new DoublePayload(this.z),
+            ),
+        ])
+    }
+
+    private vecOf1$19$2() {
+        return new LongArrayPayload([
+            new LongPayload(Vec3Iota.toRawBits(this.x)),
+            new LongPayload(Vec3Iota.toRawBits(this.y)),
+            new LongPayload(Vec3Iota.toRawBits(this.z)),
+        ])
+    }
+
+    // 相当于 Kotlin 的 Double.fromBits(bits: Long)
+    static doubleFromBits(bits: bigint): number {
+        const buffer = new ArrayBuffer(8)
+        const view = new DataView(buffer)
+        view.setBigUint64(0, bits, true) // true 表示小端字节序
+        return view.getFloat64(0, true)
+    }
+
+    // 相当于 Kotlin 的 num.toRawBits()
+    static toRawBits(num: number): bigint {
+        const buffer = new ArrayBuffer(8)
+        const view = new DataView(buffer)
+        view.setFloat64(0, num, true) // true 表示小端字节序
+        return view.getBigUint64(0, true)
     }
 
     static fromNBT(nbt: CompoundPayload): Vec3Iota {
@@ -255,38 +286,47 @@ export class Vec3Iota implements Iota {
 
         if (type !== VEC3_TYPE)
             throw new Error(`Invalid vec3 iota: ${HEX_TYPE} is not ${VEC3_TYPE}, in ${nbt.toSNBTValue('formated')}`)
-        if (dataPayload.getTagId() !== TagId.COMPOUND)
-            throw new Error(`Invalid vec3 iota: ${HEX_DATA} is not a compound, in ${nbt.toSNBTValue('formated')}`)
-        const vec3 = dataPayload as CompoundPayload
-
-        const xPayload = vec3
-            .getValue()
-            .find(tag => tag.getTagName() === "x")
-            ?.getPayload()
-        const yPayload = vec3
-            .getValue()
-            .find(tag => tag.getTagName() === "y")
-            ?.getPayload()
-        const zPayload = vec3
-            .getValue()
-            .find(tag => tag.getTagName() === "z")
-            ?.getPayload()
-
-        if (
-            !xPayload || !yPayload || !zPayload
-            || !(
-                xPayload.getTagId() === TagId.DOUBLE
-                && yPayload.getTagId() === TagId.DOUBLE
-                && zPayload.getTagId() === TagId.DOUBLE
+        if (dataPayload.getTagId() === TagId.COMPOUND) {
+            const vec3 = dataPayload as CompoundPayload
+            const xPayload = vec3
+                .getValue()
+                .find(tag => tag.getTagName() === "x")
+                ?.getPayload()
+            const yPayload = vec3
+                .getValue()
+                .find(tag => tag.getTagName() === "y")
+                ?.getPayload()
+            const zPayload = vec3
+                .getValue()
+                .find(tag => tag.getTagName() === "z")
+                ?.getPayload()
+            if (
+                !xPayload || !yPayload || !zPayload
+                || !(
+                    xPayload.getTagId() === TagId.DOUBLE
+                    && yPayload.getTagId() === TagId.DOUBLE
+                    && zPayload.getTagId() === TagId.DOUBLE
+                )
             )
-        )
-            throw new Error(`Invalid vec3 iota: ${vec3.toSNBTValue('formated')} is not a vec3`)
+                throw new Error(`Invalid vec3 iota: ${vec3.toSNBTValue('formated')} is not a vec3`)
+            return new Vec3Iota(
+                xPayload.getValue(),
+                yPayload.getValue(),
+                zPayload.getValue(),
+            )
+        } else if (dataPayload.getTagId() === TagId.LONG_ARRAY) {
+            const longArray = dataPayload as LongArrayPayload
+            if (longArray.getValue().length !== 3)
+                throw new Error(`Invalid vec3 iota: ${longArray.toSNBTValue('formated')} is not a vec3`)
+            return new Vec3Iota(
+                Vec3Iota.doubleFromBits(longArray.getValue()[0].getValue()),
+                Vec3Iota.doubleFromBits(longArray.getValue()[1].getValue()),
+                Vec3Iota.doubleFromBits(longArray.getValue()[2].getValue()),
+            )
+        }
 
-        return new Vec3Iota(
-            xPayload.getValue(),
-            yPayload.getValue(),
-            zPayload.getValue(),
-        )
+        throw new Error(`Invalid vec3 iota: ${HEX_DATA} is not a compound, in ${nbt.toSNBTValue('formated')}`)
+
     }
 }
 
@@ -383,7 +423,7 @@ export class PatternIota implements Iota {
 
     svg(px: number) {
         let small = px < 32
-        let distance = px /32
+        let distance = px / 32
         if (small) distance = 4
         let xMin = 0
         let yMin = 0
@@ -392,10 +432,10 @@ export class PatternIota implements Iota {
         const lines: string[] = []
         let circle: string[] = []
 
-        let color = (p:number) => `hsl(240 ${100 - 50 * p} ${80 - 40 * p})`
-        let nodeColor =  "hsl(0 0 100)"
-        if (small){
-            color = (p:number) => "hsl(240 100 66)"
+        let color = (p: number) => `hsl(240 ${100 - 50 * p} ${80 - 40 * p})`
+        let nodeColor = "hsl(0 0 100)"
+        if (small) {
+            color = (p: number) => "hsl(240 100 66)"
             nodeColor = "hsl(240 100 66)"
         }
         const getMove = (angle: number) => {

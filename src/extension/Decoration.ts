@@ -1,5 +1,5 @@
-import vscode, { Range, TextDocument, TextEditor, Uri } from "vscode";
-import { checkFileExists, collectPatterns, collectSymbols, parseAST } from "./util";
+import vscode, {Range, TextDocument, TextEditor, Uri} from "vscode"
+import {checkFileExists, collectPatterns, collectSymbols, parseAST} from "./util"
 import {iotaWalk, PegDefineFunction, PegDefineIota, PegIota, PegReference} from "../compile/peggy/PegTypes"
 import {PatternDefine, PatternManager} from "../compile/PatternLoader"
 import {PatternIota} from "../compile/Iota"
@@ -66,6 +66,7 @@ const inlineDecoration = vscode.window.createTextEditorDecorationType({
     after: {
         contentIconPath: undefined,
         height: '100%',
+        contentText: ' ',
         margin: '0 0 0 0',
     },
 });
