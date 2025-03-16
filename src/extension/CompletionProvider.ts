@@ -145,7 +145,7 @@ const buildInKeywords: CompletionData[] = [
         label: "iota",
         completionItem: (() => {
             const completionItem = new vscode.CompletionItem("iota", vscode.CompletionItemKind.Keyword)
-            completionItem.insertText = new vscode.SnippetString("iota ${1:name} ${2:garbage}")
+            completionItem.insertText = new vscode.SnippetString("iota ${1:name} = ${2:garbage}")
             return completionItem
         })(),
     },
@@ -153,7 +153,7 @@ const buildInKeywords: CompletionData[] = [
         label: "function",
         completionItem: (() => {
             const completionItem = new vscode.CompletionItem("func", vscode.CompletionItemKind.Keyword)
-            completionItem.insertText = new vscode.SnippetString("func ${1:name} {\n    $2\n")
+            completionItem.insertText = new vscode.SnippetString("func ${1:name} {\n    $2\n}")
             return completionItem
         })(),
     },
