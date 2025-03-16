@@ -8,7 +8,7 @@ export default class LongPayload implements IPayload<bigint> {
     private value: bigint;
 
     constructor(value: bigint) {
-        this.value = value & 0xFFFFFFFFFFFFFFFFn;
+        this.value = value;
     }
 
     static fromSNBTValue(value: string): LongPayload {
@@ -51,7 +51,7 @@ export default class LongPayload implements IPayload<bigint> {
     }
 
     setValue(value: bigint): void {
-        this.value = value & 0xFFFFFFFFFFFFFFFFn;
+        this.value = value;
     }
 
     toSNBTValue(compression: SNBTCompression): string {

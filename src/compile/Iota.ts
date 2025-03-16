@@ -267,10 +267,10 @@ export class Vec3Iota implements Iota {
 
     // 相当于 Kotlin 的 Double.fromBits(bits: Long)
     static doubleFromBits(bits: bigint): number {
-        const buffer = new ArrayBuffer(8)
-        const view = new DataView(buffer)
-        view.setBigUint64(0, bits, true) // true 表示小端字节序
-        return view.getFloat64(0, true)
+        const buffer = new ArrayBuffer(8);
+        const view = new DataView(buffer);
+        view.setBigInt64(0, bits, true); // 使用有符号写入
+        return view.getFloat64(0, true);
     }
 
     // 相当于 Kotlin 的 num.toRawBits()
@@ -278,7 +278,8 @@ export class Vec3Iota implements Iota {
         const buffer = new ArrayBuffer(8)
         const view = new DataView(buffer)
         view.setFloat64(0, num, true) // true 表示小端字节序
-        return view.getBigUint64(0, true)
+        const long =view.getBigInt64(0, true)
+        return long
     }
 
     static fromNBT(nbt: CompoundPayload): Vec3Iota {
